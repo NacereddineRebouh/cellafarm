@@ -10,6 +10,7 @@ import Star from "../public/Images/star.svg";
 import Star2 from "../public/Images/four-star.png";
 import sticker from "../public/Images/1.png";
 import star from "../public/Images/four-star.png";
+import Link from "next/link";
 
 type Props = {};
 
@@ -44,7 +45,11 @@ export default function Hero({}: Props) {
         ></Image>
         {/* members */}
         <div className="relative grid grid-rows-[1fr_1fr] xl:grid-cols-[minmax(190px,_2fr)_3fr] xl:mt-28 sm:ml-11 items-center justify-center self-center  lg:self-start overflow-visible max-w-[550px] mt-10 cursor-pointer">
-          <div className="relative self-center cursor-pointer">
+          <Link
+            className="relative self-center cursor-pointer transition-all duration-[4000ms] hover:scale-110"
+            href={"https://discord.com"}
+            target="_blank"
+          >
             <Image
               src={image1.src}
               alt={""}
@@ -68,7 +73,7 @@ export default function Hero({}: Props) {
               height={180}
               width={180}
             ></Image>
-          </div>
+          </Link>
           <div className="flex flex-row self-starti items-center cursor-pointer">
             <Star className="w-20 h-20"></Star>
 

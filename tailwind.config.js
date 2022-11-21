@@ -46,7 +46,13 @@ module.exports = {
       'pulseLong':'pulse2 5s ease-in-out infinite',
       'pulseC':'pulse2 3s ease-in-out infinite',
       'Hover':'bounce2 6s ease-in-out infinite'
+    },
+    objectPosition: {
+      'center-bottom': '50% 70%',
     }},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    // ...
+  ],
 }

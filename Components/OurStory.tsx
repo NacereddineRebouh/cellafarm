@@ -40,17 +40,14 @@ export default function OurStory({}: Props) {
         height={90}
       ></Image>
       <div className="flex flex-col items-center lg:items-start justify-center text-center lg:text-left flex-wrap lg:mr-20 2xl:mr-44 z-40 text-[#fafafa] lg:text-black mx-10 lg:mx-0 justify-self-start">
-        <span className="font-bold text-[38px] md:text-[68px] lg:text-[55px] text-center truncate lg:text-left">
+        <span className="font-bold text-[38px] md:text-[50px] lg:text-[55px] text-center truncate lg:text-left">
           Our story
         </span>
-        <span className="lg:text-[24px] text-[14px] md:text-[24px] text-gray-500">
+        <span className="lg:text-[20px] text-[14px] md:text-[17px] text-white lg:text-gray-500 italic lg:not-italic">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus earum
-          quas deserunt corrupti molestiae illum enim velit cupiditate alias
-          dolores ipsam, non doloribus vero ad animi similique ipsum tempore
-          obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quis modi aspernatur, pariatur veritatis autem, quam maxime eum totam
-          eos consequuntur sapiente quisquam animi ex obcaecati iste? Doloribus
-          neque magnam harum! <br />
+          pariatur veritatis autem, quam maxime eum totam eos consequuntur
+          sapiente quisquam animi ex obcaecati iste? Doloribus neque magnam
+          harum! <br />
           <br />
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, esse
           delectus distinctio exercitationem tempora consequatur ad totam!

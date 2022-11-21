@@ -6,17 +6,26 @@ import framer from "../public/Images/framer.png";
 import hima from "../public/Images/himma.png";
 import tree from "../public/Images/tree.png";
 import op from "../public/Images/opendoor.png";
-import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import OurStory from "../Components/OurStory";
 import OurProducts from "../Components/OurProducts";
+import JoinUs from "../Components/JoinUs";
+import ContactUs from "../Components/ContactUs";
+import Header from "../Components/Header";
+
 type Props = {};
 
 export default function HomePage({}: Props) {
   return (
-    <div className="z-0">
+    <div className="z-0 overflow-scroll scroll-smooth">
+      {/* <section
+        id="header"
+        className="fixed w-screen top-0 max-w-[2200px] z-50 backdrop-blur-[1px]"
+      > */}
+      {/* <Header /> */}
+
       {/* Hero */}
-      <section id="Hero" className="mt-14">
+      <section id="Hero" className="snap-center mt-20">
         <Hero />
         <div className="my-32 flex flex-col gap-11 text-center justify-center items-center ">
           <h1 className="font-bold text-[63px]">
@@ -72,16 +81,27 @@ export default function HomePage({}: Props) {
       </section>
 
       {/* Our Story */}
-      <section id="ourStory">
+      <section id="ourStory" className="snap-center">
         <OurStory />
       </section>
 
       {/* Our Featured Product */}
-      <section id="ourFeaturedProduct" className="mt-44">
+      <section
+        id="ourFeaturedProduct"
+        className="snap-center mt-44 flex justify-center"
+      >
         <OurProducts />
       </section>
+
       {/* Join us */}
+      <section id="joinUs" className="snap-center mt-32 flex justify-center">
+        <JoinUs />
+      </section>
+
       {/* About us */}
+      <footer id="ContactUs" className="snap-center flex justify-center">
+        <ContactUs />
+      </footer>
     </div>
   );
 }
