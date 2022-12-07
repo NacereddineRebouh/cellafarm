@@ -1,45 +1,45 @@
-import React from "react";
-import Image from "next/image";
-import Cover5 from "../public/Images/Backgrounds/5.jpg";
-import { SocialIcon } from "react-social-icons";
-type Props = {};
+import React from 'react'
+import Image from 'next/image'
+import Cover5 from '../public/Images/Backgrounds/5.jpg'
+import { SocialIcon } from 'react-social-icons'
+type Props = {}
 
 export default function ContactUs({}: Props) {
   return (
-    <div className="relative items-center h-[500px] w-screen text-white overflow-hidden cursor-default">
-      <div className="absolute top-0 right-0 h-full w-full overflow-hidden z-0">
+    <div className="relative h-[500px] w-screen cursor-default items-center overflow-hidden text-white">
+      <div className="absolute top-0 right-0 z-0 h-full w-full overflow-hidden">
         <Image
           src={Cover5}
-          alt={""}
-          className="relative object-cover object-[0px,90%] trasition-all duration-[4000ms] hover:scale-110"
+          alt={''}
+          className="trasition-all relative object-cover object-[0px,90%] duration-[4000ms] hover:scale-110"
           fill
         ></Image>
       </div>
       {/* grid-rows-[3fr_1fr]  */}
-      <div className="relative grid lg:grid-cols-[5fr_3fr] z-10 h-full gap-6">
-        <div className="flex flex-col items-center justify-center lg:items-start gap-4 ">
-          <span className="font-bold text-[30px] md:text-[36px] lg:text-[36px] text-center lg:text-left mx-3 lg:ml-10 leading-[49px] text-amber-50 ">
+      <div className="relative z-10 mx-auto grid h-full max-w-[2500px] gap-6 lg:grid-cols-[5fr_3fr]">
+        <div className="flex flex-col items-center justify-center gap-4 lg:items-start ">
+          <span className="mx-3 text-center text-[30px] font-bold leading-[49px] text-amber-50 md:text-[36px] lg:ml-10 lg:text-left lg:text-[36px] ">
             Get informations about us
           </span>
-          <span className="lg:text-[17px] xl:text-[20px] text-[16px] text-amber-50 italic lg:not-italic text-center lg:text-left mx-5 lg:ml-10">
-            What are waiting for ? Lets get you{" "}
-            <span className="italic font-medium">started</span>
+          <span className="mx-5 text-center text-[16px] italic text-amber-50 lg:ml-10 lg:text-left lg:text-[17px] lg:not-italic xl:text-[17px]">
+            What are waiting for ? Lets get you{' '}
+            <span className="font-medium italic">started</span>
           </span>
           {/* Search input */}
-          <div className="relative bg-white rounded-full h-[60px] px-5 mt-5 shadow-md max-w-md flex flex-row items-center justify-between min-w-[320px] mx-3 lg:mx-10">
+          <div className="relative mx-3 mt-5 flex h-[60px] min-w-[320px] max-w-md flex-row items-center justify-between rounded-full bg-white px-5 shadow-md lg:mx-10">
             <input
-              className="outline-none h-9 text-[15px] flex-grow mr-20 text-gray-600 focus:font-medium"
+              className="mr-20 h-9 flex-grow text-[15px] text-gray-600 outline-none focus:font-medium"
               placeholder="Email"
             ></input>
-            <div className="absolute cursor-pointer bg-green-500 text-center rounded-full h-[60px] px-7 text-white font-medium text-[15px] right-0 top-0 flex items-center pb-1 transition-all hover:bg-green-600/95">
+            <div className="absolute -right-1 top-0 flex h-[60px] cursor-pointer items-center rounded-full bg-green-500 px-7 text-center text-[15px] font-medium text-white transition-all hover:bg-green-600/95">
               Submit
             </div>
           </div>
         </div>
-        <div className="flex flex-row gap-5 w-full h-full items-center justify-center">
+        <div className="flex h-full w-full flex-row items-center justify-center gap-5">
           <SocialIcon
             url="https://facebook.com"
-            className="rounded-full cursor-pointer transition-all duration-500 hover:scale-110"
+            className="cursor-pointer rounded-full transition-all duration-500 hover:scale-110"
             style={{ height: 35, width: 35 }}
             target="_blank"
             bgColor="white"
@@ -47,7 +47,7 @@ export default function ContactUs({}: Props) {
           />
           <SocialIcon
             url="https://instagram.com"
-            className="rounded-full cursor-pointer transition-all duration-500 hover:scale-110"
+            className="cursor-pointer rounded-full transition-all duration-500 hover:scale-110"
             style={{ height: 35, width: 35 }}
             target="_blank"
             bgColor="white"
@@ -55,7 +55,7 @@ export default function ContactUs({}: Props) {
           />
           <SocialIcon
             url="https://twitter.com"
-            className="rounded-full cursor-pointer transition-all duration-500 hover:scale-110"
+            className="cursor-pointer rounded-full transition-all duration-500 hover:scale-110"
             target="_blank"
             style={{ height: 35, width: 35 }}
             bgColor="white"
@@ -64,5 +64,5 @@ export default function ContactUs({}: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,29 +1,29 @@
-import React from "react";
-import Image from "next/image";
-import Cover2 from "../public/Images/cover2.jpg";
-import Cover3 from "../public/Images/Backgrounds/1.jpg";
-import Cover4 from "../public/Images/Backgrounds/2.jpg";
-import Cover5 from "../public/Images/Backgrounds/3.jpg";
-import Cover6 from "../public/Images/Backgrounds/4.jpg";
-import star from "../public/Images/four-star.png";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import React from 'react'
+import Image from 'next/image'
+import Cover2 from '../public/Images/cover2.jpg'
+import Cover3 from '../public/Images/Backgrounds/1.jpg'
+import Cover4 from '../public/Images/Backgrounds/2.jpg'
+import Cover5 from '../public/Images/Backgrounds/3.jpg'
+import Cover6 from '../public/Images/Backgrounds/4.jpg'
+import star from '../public/Images/four-star.png'
+import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
-type Props = {};
+type Props = {}
 
 export default function JoinUs({}: Props) {
   return (
-    <div className="relative bg-white h-[500px] md:h-[880px] grid grid-cols-[1fr] lg:grid-cols-[1fr_1fr] gap-7 rounded-[60px] lg:rounded-none mx-0 md:mx-14 lg:mx-0 py-10 mb-20 lg:mb-0">
-      <div className="flex flex-col items-center lg:items-start justify-center text-center lg:text-left flex-wrap mx-6 md:ml-10 lg:ml-14 2xl:ml-36 z-40 text-[#fafafa] lg:text-black justify-self-start col-start-1 gap-7">
-        <span className="font-bold text-[26px] md:text-[36px] lg:text-[44px] text-center lg:text-left leading-[49px]">
+    <div className="relative mx-auto mb-20 grid h-[500px] max-w-[2500px] grid-cols-[1fr] gap-7 rounded-[60px] bg-white py-10  md:h-[880px] lg:mb-0 lg:grid-cols-[1fr_1fr] lg:rounded-none">
+      <div className="z-40 col-start-1 mx-6 flex flex-col flex-wrap items-center justify-center gap-7 justify-self-start text-center text-[#fafafa] md:ml-10 lg:ml-14 lg:items-start lg:text-left lg:text-black 2xl:ml-36">
+        <span className="text-center text-[26px] font-bold leading-[49px] md:text-[36px] lg:text-left lg:text-[44px]">
           Thousands of people trust our agricultural products
         </span>
-        <span className="lg:text-[17px] xl:text-[20px] text-[14px] md:text-[14px] text-white lg:text-gray-500 italic lg:not-italic">
-          Join the amazing <span className="italic font-medium">Farming</span>{" "}
+        <span className="text-[14px] italic text-white md:text-[14px] lg:text-[17px] lg:not-italic lg:text-gray-500 xl:text-[20px]">
+          Join the amazing <span className="font-medium italic">Farming</span>{' '}
           that we provide for you and just for you
         </span>
 
         {/* large screens */}
-        <div className="relative w-fit h-24 bg-green-800 min-h-[86px] pl-9 pr-6 py-3 text-[14px] font-medium text-[#fafafa] mt-10 cursor-pointer rounded-3xl scale-90 lg:scale-60 xl:scale-100 md:flex hidden flex-row items-center justify-center md:gap-4 lg:gap-6 xl:gap-10 overflow-visible">
+        <div className="lg:scale-60 relative mt-10 hidden h-24 min-h-[86px] w-fit scale-90 cursor-pointer flex-row items-center justify-center overflow-visible rounded-3xl bg-green-800 py-3 pl-9 pr-6 text-[14px] font-medium text-[#fafafa] md:flex md:gap-4 lg:gap-6 xl:scale-100 xl:gap-10">
           <div>
             <p className="text-[18px]">20.000 +</p>
             <p className="font-normal text-gray-300 line-clamp-1">
@@ -36,49 +36,49 @@ export default function JoinUs({}: Props) {
               Contries cooperate with us
             </p>
           </div>
-          <div className="min-w-[64px] min-h-[64px] bg-green-400 transition-all duration-300 hover:bg-green-300 rounded-3xl p-4 my-4">
+          <div className="my-4 min-h-[64px] min-w-[64px] rounded-3xl bg-green-400 p-4 transition-all duration-300 hover:bg-green-300">
             <ArrowRightIcon className="text-black" />
           </div>
         </div>
 
         {/* small screens */}
-        <div className="relative w-fit h-24 bg-green-800 min-h-[86px] px-5 py-3 text-[14px] font-medium text-[#fafafa] mt-10 cursor-pointer rounded-3xl scale-90 lg:scale-60 xl:scale-100 md:hidden flex flex-row items-center justify-center md:gap-4 lg:gap-6 xl:gap-10 overflow-visible">
-          <div className="min-w-[64px] min-h-[64px] bg-green-400 transition-all duration-300 hover:bg-green-300 rounded-3xl p-4 my-4">
+        <div className="lg:scale-60 relative mt-10 flex h-24 min-h-[86px] w-fit scale-90 cursor-pointer flex-row items-center justify-center overflow-visible rounded-3xl bg-green-800 px-5 py-3 text-[14px] font-medium text-[#fafafa] md:hidden md:gap-4 lg:gap-6 xl:scale-100 xl:gap-10">
+          <div className="my-4 min-h-[64px] min-w-[64px] rounded-3xl bg-green-400 p-4 transition-all duration-300 hover:bg-green-300">
             <ArrowRightIcon className="text-black" />
           </div>
         </div>
       </div>
 
-      <div className="relative mx-12 xl:mx-24 max-h-full my-10 w-[520px] xl:w-[600px] max-w-full col-start-2 text-center hidden lg:flex ">
-        <div className="relative w-full h-full rounded-tr-[300px] rounded-tl-[100px] rounded-b-[100px] overflow-hidden shadow-[15px_35px_60px_-15px_rgba(0,0,0,.3)] trasition-all duration-[4000ms] hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.6)]">
+      <div className="relative col-start-2 mx-auto my-10 hidden max-h-full w-[520px] max-w-full text-center lg:flex xl:w-[600px] ">
+        <div className="trasition-all relative h-full w-full overflow-hidden rounded-b-[100px] rounded-tr-[300px] rounded-tl-[100px] shadow-[15px_35px_60px_-15px_rgba(0,0,0,.3)] duration-[4000ms] hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.6)]">
           <Image
             src={Cover6}
-            alt={""}
-            className="object-cover  justify-self-center text-[0px] trasition-all duration-[4000ms] hover:scale-110 hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.9)]"
+            alt={''}
+            className="trasition-all  justify-self-center object-cover text-[0px] duration-[4000ms] hover:scale-110 hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.9)]"
             fill
           ></Image>
         </div>
-        <div className="absolute shadow-lg rounded-[50px] top-[320px] left-[-50px] xl:left-[-50px] text-white text-center backdrop-blur-lg bg-white/30 font-semibold text-[28px] w-72 h-32 px-5 truncate tracking-widest py-6 flex justify-center items-center cursor-pointer">
+        <div className="absolute top-[320px] left-[-50px] flex h-32 w-72 cursor-pointer items-center justify-center truncate rounded-[50px] bg-white/30 px-5 py-6 text-center text-[28px] font-semibold tracking-widest text-white shadow-lg backdrop-blur-lg xl:left-[-50px]">
           Join Now
         </div>
       </div>
       {/* mobiles & tablets */}
-      <div className="absolute h-full w-full col-start-1 text-center overflow-visible flex lg:hidden mb-20 lg:mb-0">
+      <div className="absolute col-start-1 mb-20 flex h-full w-full overflow-visible text-center lg:mb-0 lg:hidden">
         <Image
           src={Cover6}
-          alt={""}
-          className="object-cover rounded-[60px] blur-[2px] shadow-2xl justify-self-center opacity-90 "
+          alt={''}
+          className="justify-self-center rounded-[60px] object-cover opacity-90 shadow-2xl blur-[2px] "
           fill
         ></Image>
       </div>
       {/* star */}
       <Image
         src={star}
-        alt={""}
-        className="absolute object-cover top-[30px] left-[20%] hidden lg:flex blur-[1px] hue-rotate-60"
+        alt={''}
+        className="absolute top-[30px] left-[20%] hidden object-cover blur-[1px] hue-rotate-60 lg:flex"
         width={90}
         height={90}
       ></Image>
     </div>
-  );
+  )
 }

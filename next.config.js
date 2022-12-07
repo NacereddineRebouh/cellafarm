@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = {compiler: {
+  // Enables the styled-components SWC transform
+  styledComponents: true
+},
   reactStrictMode: true,
   swcMinify: true,
   experimental:{appDir: true},
@@ -25,6 +28,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tailwindui.com',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
       },
     ],
   },

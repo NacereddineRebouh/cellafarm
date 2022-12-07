@@ -2,20 +2,18 @@
 import Link from 'next/link'
 import React from 'react'
 import { useSession } from 'next-auth/react'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Session } from 'next-auth'
 import ProfileNavbar from './ProfileNavbar'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-type Props = {}
+type Props = {
+  session?: Session
+}
 
-export default function Header({}: Props) {
-  // const { data: session } = useSession();
-  function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-  }
+export default function Header_Logged({ session }: Props) {
   return (
-    <header>
+    <header className="border-[1px] bg-[#f3ffe9]/40 shadow-sm">
       <Disclosure as="nav">
         {({ open }) => (
           <>
@@ -26,7 +24,7 @@ export default function Header({}: Props) {
                   : 'mx-auto max-w-[2200px] transition-all duration-300'
               }
             >
-              <div className="grid h-20 grid-cols-[2fr_2fr] px-6 text-[17px] md:grid-cols-[1fr_4fr] md:px-8 xl:px-16">
+              <div className="grid h-20 grid-cols-[2fr_1fr_2fr] px-6 text-[17px] md:grid-cols-[1fr_4fr] md:px-8 xl:px-16">
                 {/* Mobile menu button*/}
                 <div className="flex items-center text-center md:hidden">
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-green-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -38,40 +36,38 @@ export default function Header({}: Props) {
                     )}
                   </Disclosure.Button>
                 </div>
-
                 <Link
                   href="/"
-                  className="hidden items-center justify-center text-center font-bold md:flex md:justify-start "
+                  className="flex items-center justify-center text-center font-bold md:w-auto md:justify-start"
                 >
                   CELLA
                 </Link>
-                <div className="mr-0 flex flex-row items-center justify-end gap-9 overflow-visible font-medium lg:gap-12">
+
+                <div className="flex flex-row items-center justify-end gap-12 font-medium md:mr-3">
                   {/* <Link className="hidden lg:flex" href="/">
-            <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
-              Home
-            </div>
-          </Link> */}
-                  <Link className="hidden lg:flex" href="/Products">
+              <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
+                Home
+              </div>
+            </Link> */}
+                  <Link className="hidden md:flex" href="/Products">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Products
                     </div>
                   </Link>
-                  <Link className="hidden lg:flex" href="/Blog">
+                  <Link className="hidden md:flex" href="/Blog">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
-                      blog
+                      Blog
                     </div>
                   </Link>
-                  <Link className="hidden lg:flex" href="#ContactUs">
+                  <Link className="hidden md:flex" href="#ContactUs">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Contact
                     </div>
                   </Link>
 
                   {/* Button */}
-
-                  <div className="flex h-14 cursor-pointer items-center justify-end truncate rounded-full border-[1px] border-gray-300 bg-[#FAFAFA] px-5 font-medium drop-shadow-sm transition-all duration-300 hover:scale-105 hover:bg-zinc-100 hover:shadow-md">
-                    <Link href="/Login">Get Started</Link>
-                  </div>
+                  <ProfileNavbar />
+                  {/* <div>{session?.user?.name}</div> */}
                 </div>
               </div>
               <Disclosure.Panel className="md:hidden">
