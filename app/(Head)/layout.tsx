@@ -18,15 +18,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // const headersList = headers();
-  // const referer = headersList.get("referer");
-  // let classN =
-  //   "absolute rounded-full h-[550px] w-[550px] bg-orange-200/80 blur-sm -top-28 -left-28 -z-10  animate-pulseLong overflow-hidden";
-  // if (referer?.includes("/Login") || referer?.includes("/Register")) {
-  //   console.log("---------------referer includes /Login----------------");
-  //   classN =
-  //     "absolute rounded-full h-[550px] w-[550px] bg-emerald-200 blur-sm -top-28 -left-28 -z-10  animate-pulseLong overflow-hidden";
-  // }
+
   const session = await unstable_getServerSession()
   return (
     <html lang="en" className={inter.variable}>
