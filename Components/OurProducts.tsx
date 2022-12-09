@@ -9,10 +9,22 @@ type Props = {}
 
 export default function OurProducts({}: Props) {
   const prods = [
-    { prod: rice, name: 'Rice' },
-    { prod: veg, name: 'Vegetables' },
-    { prod: pump, name: 'Pumpkin' },
-    { prod: wheat, name: 'Wheat' },
+    {
+      prod: 'https://res.cloudinary.com/dttrs30gt/image/upload/v1670567759/rice-min_phhtmk.jpg',
+      name: 'Rice',
+    },
+    {
+      prod: 'https://res.cloudinary.com/dttrs30gt/image/upload/v1670567769/veg-min_kex0sj.jpg',
+      name: 'Vegetables',
+    },
+    {
+      prod: 'https://res.cloudinary.com/dttrs30gt/image/upload/v1670567752/pumpkin-min_izyawa.jpg',
+      name: 'Pumpkin',
+    },
+    {
+      prod: 'https://res.cloudinary.com/dttrs30gt/image/upload/v1670567792/wheat-min_jopmp5.webp',
+      name: 'Wheat',
+    },
   ]
   return (
     <div className="relative grid w-screen max-w-[1350px] grid-rows-[1fr_3fr] gap-8">

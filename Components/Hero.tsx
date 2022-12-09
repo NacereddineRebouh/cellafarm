@@ -1,15 +1,16 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import image1 from '../public/Images/1.jpg'
-import image2 from '../public/Images/2.jpg'
-import image3 from '../public/Images/3.jpg'
+// import image1 from '../public/Images/1.jpg'
+// import image2 from '../public/Images/2.jpg'
+// import image3 from '../public/Images/3.jpg'
 import Cover1 from '../public/Images/cover.jpg'
-import Cover2 from '../public/Images/cover2.jpg'
+// import Cover2 from '../public/Images/cover2.jpg'
 import Star from '../public/Images/star.svg'
-import Star2 from '../public/Images/four-star.png'
+// import Star2 from '../public/Images/four-star.png'
 import sticker from '../public/Images/1.png'
 import star from '../public/Images/four-star.png'
+import logo from '../public/Images/logo_small.png'
 import Link from 'next/link'
 
 type Props = {}
@@ -51,7 +52,8 @@ export default function Hero({}: Props) {
             target="_blank"
           >
             <Image
-              src={image1.src}
+              // src={image1.src}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567779/1-min_s16kqj.jpg"
               alt={''}
               className="aspect-square absolute left-0 -top-10 h-20 w-20 rounded-full border-4 border-white object-cover"
               height={180}
@@ -59,7 +61,7 @@ export default function Hero({}: Props) {
             ></Image>
 
             <Image
-              src={image2.src}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567782/2-min_obqxcy.jpg"
               alt={''}
               className="aspect-square absolute left-14 -top-10 h-20 w-20 rounded-full border-4 border-white object-cover"
               height={180}
@@ -67,7 +69,7 @@ export default function Hero({}: Props) {
             ></Image>
 
             <Image
-              src={image3.src}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567745/3-min_tvnqzt.jpg"
               alt={''}
               className="aspect-square absolute left-28 -top-10 h-20 w-20 rounded-full border-4 border-white object-cover"
               height={180}
@@ -90,18 +92,24 @@ export default function Hero({}: Props) {
       {/* Cover */}
       <div className="collapse relative z-0 h-full w-full object-cover lg:visible ">
         <Image
-          src={Cover1}
+          src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567369/cover-min_ciliam.jpg"
+          // src={Cover1}
           alt={''}
           className="rounded-t-full rounded-bl-full rounded-br-[1000px] object-cover drop-shadow-2xl "
           fill
         ></Image>
-        <Image
-          src={sticker}
-          alt={''}
-          className="absolute top-[550px] -rotate-12 object-cover drop-shadow-2xl"
-          width={200}
-          height={200}
-        ></Image>
+        <div className="absolute top-[550px] h-72 w-72 -rotate-12 object-cover p-6 drop-shadow-2xl">
+          <Image
+            src={
+              'https://res.cloudinary.com/dttrs30gt/image/upload/c_scale,w_256/v1670567934/logo_gbbmes.png'
+            }
+            alt={''}
+            quality={100}
+            className="object-cover drop-shadow-2xl"
+            width={250}
+            height={250}
+          ></Image>
+        </div>
       </div>
     </div>
   )

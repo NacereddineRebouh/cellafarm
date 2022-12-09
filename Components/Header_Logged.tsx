@@ -20,14 +20,14 @@ export default function Header_Logged({ session }: Props) {
             <div
               className={
                 open
-                  ? 'mx-auto max-w-[2200px] backdrop-blur-md transition-all duration-300 ease-out'
-                  : 'mx-auto max-w-[2200px] transition-all duration-300'
+                  ? 'mx-auto max-w-[2200px] backdrop-blur-md'
+                  : 'mx-auto max-w-[2200px]'
               }
             >
               <div className="grid h-20 grid-cols-[2fr_1fr_2fr] px-6 text-[17px] md:grid-cols-[1fr_4fr] md:px-8 xl:px-16">
                 {/* Mobile menu button*/}
                 <div className="flex items-center text-center md:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-green-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white hover:bg-green-300 hover:text-white">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />

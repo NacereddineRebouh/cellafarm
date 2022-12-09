@@ -37,6 +37,14 @@ const nextConfig = {compiler: {
         protocol: 'http',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 }

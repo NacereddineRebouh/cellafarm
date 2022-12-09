@@ -15,21 +15,21 @@ export default function Header({}: Props) {
     return classes.filter(Boolean).join(' ')
   }
   return (
-    <header>
+    <header className="bg-gray-100/40">
       <Disclosure as="nav">
         {({ open }) => (
           <>
             <div
               className={
                 open
-                  ? 'mx-auto max-w-[2200px] backdrop-blur-md transition-all duration-300 ease-out'
+                  ? 'mx-auto max-w-[2200px] transition-all duration-300 ease-out'
                   : 'mx-auto max-w-[2200px] transition-all duration-300'
               }
             >
               <div className="grid h-20 grid-cols-[2fr_2fr] px-6 text-[17px] md:grid-cols-[1fr_4fr] md:px-8 xl:px-16">
                 {/* Mobile menu button*/}
                 <div className="flex items-center text-center md:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-green-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white hover:bg-green-300 hover:text-white">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -51,17 +51,17 @@ export default function Header({}: Props) {
               Home
             </div>
           </Link> */}
-                  <Link className="hidden lg:flex" href="/Products">
+                  <Link className="hidden md:flex" href="/Products">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Products
                     </div>
                   </Link>
-                  <Link className="hidden lg:flex" href="/Blog">
+                  <Link className="hidden md:flex" href="/Blog">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       blog
                     </div>
                   </Link>
-                  <Link className="hidden lg:flex" href="#ContactUs">
+                  <Link className="hidden md:flex" href="#ContactUs">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Contact
                     </div>

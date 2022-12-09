@@ -52,7 +52,8 @@ export default function JoinUs({}: Props) {
       <div className="relative col-start-2 mx-auto my-10 hidden max-h-full w-[520px] max-w-full text-center lg:flex xl:w-[600px] ">
         <div className="trasition-all relative h-full w-full overflow-hidden rounded-b-[100px] rounded-tr-[300px] rounded-tl-[100px] shadow-[15px_35px_60px_-15px_rgba(0,0,0,.3)] duration-[4000ms] hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.6)]">
           <Image
-            src={Cover6}
+            src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567829/4-min_kdqigw.jpg"
+            // src={Cover6}
             alt={''}
             className="trasition-all  justify-self-center object-cover text-[0px] duration-[4000ms] hover:scale-110 hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.9)]"
             fill

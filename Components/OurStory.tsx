@@ -22,7 +22,8 @@ export default function OurStory({}: Props) {
       {/* mobiles & tablets */}
       <div className="absolute col-start-1 flex  h-full w-full overflow-visible text-center lg:hidden ">
         <Image
-          src={Cover5}
+          src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567799/3_pdk4pz.jpg"
+          // src={Cover5}
           alt={''}
           className="justify-self-center rounded-[60px] object-cover opacity-90 shadow-2xl blur-[2px] "
           fill

@@ -43,50 +43,56 @@ export default async function HomePage({}: Props) {
         <div className="absolute top-[650px] left-[87%] z-0 hidden h-[400px] w-[400px] animate-pulseC rounded-full bg-emerald-200/80 blur-sm drop-shadow-small2 md:flex" />
         <div className="absolute top-20 z-0 h-[400px] w-[400px] animate-pulseLong overflow-hidden rounded-full bg-orange-200/95 blur-md drop-shadow-small " />
         <Hero />
-        <div className="relative z-10 my-32 flex flex-col items-center justify-center gap-11 text-center">
+        <div className="relative z-10 my-32 flex flex-col items-center justify-center gap-6 text-center sm:gap-11">
           <h1 className="text-[63px] font-bold">
             Trusted by over <span className="underline ">20,000</span> Partners
           </h1>
-          <div className="relative flex h-11 w-auto flex-row flex-wrap justify-center  gap-2">
+          <div className="relative flex w-auto flex-row flex-wrap justify-center gap-1 sm:h-11 sm:gap-2">
             {/* icons */}
             <Image
-              src={airbnb.src}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577752/logos/airbnb_rvbnbh.png"
+              // src={airbnb.src}
               alt={''}
-              width={140}
+              width={128}
               height={40}
-              className="object-contain grayscale"
+              className="scale object-contain grayscale"
             />
 
             <Image
-              src={framer}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577751/logos/framer_tlk8kg.png"
+              // src={framer}
               alt={''}
               width={128}
               height={40}
               className="object-contain grayscale"
             />
             <Image
-              src={hima}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577752/logos/himma_tuqpoo.png"
+              // src={hima}
               alt={''}
               width={128}
               height={40}
               className="object-contain grayscale"
             />
             <Image
-              src={op}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577750/logos/opendoor_imaljj.png"
+              // src={op}
               alt={''}
               width={128}
               height={40}
               className="object-contain grayscale"
             />
             <Image
-              src={tree}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577752/logos/tree_ednwcu.png"
+              // src={tree}
               alt={''}
               width={128}
               height={10}
               className="object-contain grayscale"
             />
             <Image
-              src={pendo}
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577752/logos/pendo_l5k9qf.png"
+              // src={pendo}
               alt={''}
               width={128}
               height={40}

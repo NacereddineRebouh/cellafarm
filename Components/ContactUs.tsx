@@ -9,7 +9,8 @@ export default function ContactUs({}: Props) {
     <div className="relative h-[500px] w-screen cursor-default items-center overflow-hidden text-white">
       <div className="absolute top-0 right-0 z-0 h-full w-full overflow-hidden">
         <Image
-          src={Cover5}
+          src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567797/5-min_g7ffll.jpg"
+          // src={Cover5}
           alt={''}
           className="trasition-all relative object-cover object-[0px,90%] duration-[4000ms] hover:scale-110"
           fill

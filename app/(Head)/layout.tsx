@@ -30,7 +30,7 @@ export default async function RootLayout({
   const session = await unstable_getServerSession()
   return (
     <html lang="en" className={inter.variable}>
-      <body className="relative h-screen self-center overflow-x-hidden overflow-y-scroll scroll-smooth bg-white  scrollbar-thin scrollbar-track-gray-400/40 scrollbar-thumb-green-400">
+      <body className="relative h-screen self-center overflow-y-scroll scroll-smooth bg-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/40 scrollbar-thumb-green-400">
         {/* Background circle */}
         {/* <div className={classN} /> */}
         {/* <div className="absolute top-[650px] left-[87%] min-h-[50px] min-w-[100px] overflow-hidden">
@@ -44,7 +44,7 @@ export default async function RootLayout({
           {/* <Header /> */}
         </section>
         <SessionProvider>
-          <section className="mx-auto">{children}</section>
+          <section className="mx-auto overflow-x-hidden">{children}</section>
         </SessionProvider>
       </body>
     </html>
