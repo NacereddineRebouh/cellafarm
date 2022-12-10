@@ -22,8 +22,8 @@ interface Data {
 //   imageAlt: string;
 // }
 export default function ProductCard2({ product }: Props) {
-  const imgsrc =
-    process.env.NEXT_PUBLIC_BACKEND_API + '/' + product.product_image
+  const imgsrc = product.product_image
+  //const imgsrc =process.env.NEXT_PUBLIC_BACKEND_API + '/' + product.product_image
   const title =
     product.number_of_purchases / 1000 < 1
       ? product.number_of_purchases
