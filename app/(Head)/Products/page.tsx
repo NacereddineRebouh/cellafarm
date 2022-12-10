@@ -122,7 +122,7 @@ export default function ProductsPage({}: Props) {
       }
     })
     console.log(FilterCategories.toString())
-    const url=process.env.NEXTAUTH_URL+"/api/fetch/Search?"
+    const url=process.env.NEXT_PUBLIC_App_URL+"/api/fetch/Search?"
     console.log(url)
     const res = await fetch(
        url+
@@ -138,7 +138,7 @@ export default function ProductsPage({}: Props) {
   }
 
   async function getProducts() {
-    const url=process.env.NEXTAUTH_URL+"/api/fetch/Products"
+    const url=process.env.NEXT_PUBLIC_App_URL+"/api/fetch/Products"
     console.log(url)
     const res = await fetch(url)
     const data = await res.json()
