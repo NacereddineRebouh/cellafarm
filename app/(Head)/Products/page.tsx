@@ -123,8 +123,7 @@ export default function ProductsPage({}: Props) {
     })
     console.log(FilterCategories.toString())
     const res = await fetch(
-      process.env.NEXTAUTH_URL +
-        '/api/fetch/Search?' +
+      process.env.NEXTAUTH_URL ,'/api/fetch/Search?' +
         new URLSearchParams({
           SearchValue: searchValue,
           category: FilterCategories.toString(),
@@ -137,7 +136,7 @@ export default function ProductsPage({}: Props) {
   }
 
   async function getProducts() {
-    const res = await fetch(process.env.NEXTAUTH_URL + '/api/fetch/Products')
+    const res = await fetch(process.env.NEXTAUTH_URL, '/api/fetch/Products')
     const data = await res.json()
     //set categories to false
     console.log(data)
