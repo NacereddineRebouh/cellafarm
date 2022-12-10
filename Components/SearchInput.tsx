@@ -21,7 +21,7 @@ type Props = {
 export default function SearchInput({ SetProducts, setSearchValue }: Props) {
   const searchRef = useRef<HTMLInputElement>(null)
   async function searchProducts(val: string) {
-    const url = process.env.NEXTAUTH_URL+'/api/fetch/Search?'
+    const url = process.env.NEXT_PUBLIC_App_URL+'/api/fetch/Search?'
     console.log(url)
     const res = await fetch(
       url+new URLSearchParams({ SearchValue: val })
@@ -33,7 +33,7 @@ export default function SearchInput({ SetProducts, setSearchValue }: Props) {
     // console.log(data)
   }
   async function listProducts() {
-    const url = process.env.NEXTAUTH_URL +'/api/fetch/Products'
+    const url = process.env.NEXT_PUBLIC_App_URL +'/api/fetch/Products'
     console.log(url)
     const res = await fetch(url)
     const data = await res.json()
