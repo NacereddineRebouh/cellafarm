@@ -29,7 +29,7 @@ export default function LoginPage({}: Props) {
 
   //facebook Handler Function
   const handleFacebookLogin = async () =>
-    signIn('facebook', { callbackUrl: 'http://localhost:3000/' })
+    signIn('facebook', { callbackUrl: 'https://cellafarm.vercel.app/' })
   // @ts-ignore
   const handleCredLogin = async (e) => {
     e.preventDefault()
