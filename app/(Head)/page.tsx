@@ -108,7 +108,10 @@ export default async function HomePage({}: Props) {
       </section>
 
       {/* Our Featured Product */}
-      <section id="ourFeaturedProduct" className=" mt-44 flex justify-center">
+      <section
+        id="ourFeaturedProduct"
+        className=" mt-28 flex justify-center md:mt-44"
+      >
         <OurProducts />
       </section>
 

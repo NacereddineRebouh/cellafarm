@@ -14,6 +14,8 @@ export default function OurStory({}: Props) {
           alt={''}
           className="animate-Hover justify-self-center rounded-b-full rounded-tl-[9950px] rounded-tr-[2690px] border-[8px] border-orange-300 object-cover text-[0px] shadow-[15px_35px_60px_-15px_rgba(0,0,0,.3)] "
           fill
+          sizes="(max-width: 768px) 20vw,
+          90vw"
         ></Image>
         <div className="relative top-[320px] left-[370px] h-20 w-48 truncate rounded-3xl border-[2px] border-orange-100 bg-gradient-to-r from-red-300/40 to-orange-400/40 px-5 py-6 text-center text-[22px] font-semibold tracking-widest text-white shadow-lg backdrop-blur-md xl:left-[450px]">
           Since 1986
@@ -27,6 +29,8 @@ export default function OurStory({}: Props) {
           alt={''}
           className="justify-self-center rounded-[60px] object-cover opacity-90 shadow-2xl blur-[2px] "
           fill
+          sizes="max-width: 768px) 30vw,
+          (max-width: 1024px) 60vw"
         ></Image>
       </div>
       {/* star */}

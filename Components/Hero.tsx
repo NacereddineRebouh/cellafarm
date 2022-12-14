@@ -97,6 +97,9 @@ export default function Hero({}: Props) {
           alt={''}
           className="rounded-t-full rounded-bl-full rounded-br-[1000px] object-cover drop-shadow-2xl "
           fill
+          sizes="(max-width: 1024px) 0vw,
+          (max-width: 1200px) 40vw,
+          50vw"
         ></Image>
         <div className="absolute top-[550px] h-72 w-72 -rotate-12 object-cover p-6 drop-shadow-2xl">
           <Image

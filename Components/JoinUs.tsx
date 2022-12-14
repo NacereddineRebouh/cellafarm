@@ -7,6 +7,7 @@ import Cover5 from '../public/Images/Backgrounds/3.jpg'
 import Cover6 from '../public/Images/Backgrounds/4.jpg'
 import star from '../public/Images/four-star.png'
 import { ArrowRightIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -57,11 +58,15 @@ export default function JoinUs({}: Props) {
             alt={''}
             className="trasition-all  justify-self-center object-cover text-[0px] duration-[4000ms] hover:scale-110 hover:shadow-[15px_35px_60px_-15px_rgba(0,0,0,.9)]"
             fill
+            sizes="60vw"
           ></Image>
         </div>
-        <div className="absolute top-[320px] left-[-50px] flex h-32 w-72 cursor-pointer items-center justify-center truncate rounded-[50px] bg-white/30 px-5 py-6 text-center text-[28px] font-semibold tracking-widest text-white shadow-lg backdrop-blur-lg xl:left-[-50px]">
+        <Link
+          href={'/Blog'}
+          className="absolute top-[320px] left-[-50px] flex h-32 w-72 cursor-pointer items-center justify-center truncate rounded-[50px] bg-white/30 px-5 py-6 text-center text-[28px] font-semibold tracking-widest text-white shadow-lg backdrop-blur-lg xl:left-[-50px]"
+        >
           Join Now
-        </div>
+        </Link>
       </div>
       {/* mobiles & tablets */}
       <div className="absolute col-start-1 mb-20 flex h-full w-full overflow-visible text-center lg:mb-0 lg:hidden">
@@ -70,6 +75,8 @@ export default function JoinUs({}: Props) {
           alt={''}
           className="justify-self-center rounded-[60px] object-cover opacity-90 shadow-2xl blur-[2px] "
           fill
+          sizes="(max-width: 768px) 30vw,
+          (max-width: 1024px) 60vw"
         ></Image>
       </div>
       {/* star */}

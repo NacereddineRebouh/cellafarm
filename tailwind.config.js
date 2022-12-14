@@ -7,6 +7,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./Components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     screens: {

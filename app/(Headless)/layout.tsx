@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <head />
+      {/* <head /> */}
 
       <body className="relative mx-auto h-screen max-w-[1900px] overflow-hidden">
         <SessionProvider>{children}</SessionProvider>

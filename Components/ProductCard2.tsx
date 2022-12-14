@@ -1,5 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import BookmarkAddRoundedIcon from '@mui/icons-material/BookmarkAddRounded'
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
 type Props = { product: Data }
 
 interface Data {
@@ -27,16 +30,20 @@ export default function ProductCard2({ product }: Props) {
   const title =
     product.number_of_purchases / 1000 < 1
       ? product.number_of_purchases
-      : `S${(product.number_of_purchases / 1000).toFixed()}k in this year`
+      : `${(product.number_of_purchases / 1000).toFixed()}k in this year`
   return (
-    <div className="">
+    <Link href={`/Products/${product.id}`} className="relative">
       <link
         rel="stylesheet"
         href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"
       />
+      {/* foreground */}
 
       {/* <!-- Product Card --> */}
-      <div className="max-w-96 flex cursor-pointer flex-col overflow-hidden rounded-xl border-[1px] border-gray-300 duration-300">
+      <div
+        className="max-w-96 group/for flex cursor-pointer flex-col overflow-hidden rounded-xl border-[1px] border-gray-300 duration-300"
+        tabIndex={1}
+      >
         {/* <!-- Preview --> */}
         <div className="min-h-48 group aspect-h-1 aspect-w-1 relative my-auto inline overflow-hidden">
           {/* <!-- Thumbnail --> */}
@@ -65,28 +72,40 @@ export default function ProductCard2({ product }: Props) {
             >
               {/* <!-- Add to Bookmarks Button --> */}
               <button
-                className="my-auto h-9 
+                className="group/book my-auto 
+                h-9
                         w-9 rounded-full bg-gray-50/10 px-1 transition-colors
                         duration-200 hover:bg-gray-50/20"
               >
-                <i
+                {/* <i
                   className="mdi mdi-playlist-plus text-xl text-gray-200
                             transition-all duration-200 hover:text-white"
                   title="Add to Bookmarks"
-                />
+                /> */}
+                <BookmarkAddRoundedIcon
+                  className="text-2xl
+                  text-gray-200
+                            transition-all duration-200 group-hover/book:text-white"
+                  titleAccess="Add to Bookmarks"
+                ></BookmarkAddRoundedIcon>
               </button>
 
               {/* <!-- Add to Favorites Button --> */}
               <button
                 className="my-auto h-9 
-                        w-9 rounded-full bg-gray-50/10 px-1 transition-colors
-                        duration-200 hover:bg-gray-50/20"
+                        w-9 rounded-full bg-gray-50/10 px-1 text-center
+                        transition-colors duration-200  hover:bg-gray-50/20 "
               >
-                <i
+                {/* <i
                   className="mdi mdi-heart p-1 text-xl text-gray-200
                             transition-all duration-200 hover:text-white"
                   title="Add to Favorites"
-                ></i>
+                ></i> */}
+                <FavoriteRoundedIcon
+                  className="text-2xl text-gray-200
+                transition-all duration-200 hover:text-white"
+                  titleAccess="Add to Favorites"
+                ></FavoriteRoundedIcon>
               </button>
             </div>
           </div>
@@ -207,7 +226,11 @@ export default function ProductCard2({ product }: Props) {
             </div>
           </div>
         </div>
+        <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 group-focus/for:visible group-focus/for:from-green-500  group-focus/for:opacity-100 ">
+          Loading...
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
+// bg-gradient-to-r from-cyan-500 to-blue-500

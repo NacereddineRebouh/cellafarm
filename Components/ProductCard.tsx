@@ -18,6 +18,9 @@ export default function ProductCard({ image, description, name }: Props) {
           fill
           className="rounded-3xl object-cover"
           quality={60}
+          sizes="(max-width: 768px) 30vw,
+          (max-width: 1200px) 5vw,
+          5vw"
         />
       </div>
       <p className="text-[18px] font-bold">{name}</p>

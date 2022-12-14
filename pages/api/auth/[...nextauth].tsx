@@ -5,9 +5,9 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 export const authOptions = {
   // Configure one or more authentication providers
   secret: process.env.NEXTAUTH_SECRET,
-  session: {
-    strategy: 'jwt',
-  },
+  // session: {
+  //   strategy: 'jwt',
+  // },
   providers: [
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID as string,
@@ -21,6 +21,7 @@ export const authOptions = {
           // @ts-ignore
           const { name, password } = credentials
           console.log(name, password)
+          console.log(process.env.NEXT_PUBLIC_BACKEND_API + '/api/login')
           const result = await fetch(
             process.env.NEXT_PUBLIC_BACKEND_API + '/api/login',
             {
@@ -34,7 +35,7 @@ export const authOptions = {
           )
           let user = { id: '1', name: 'J Smith', email: 'jsmith@example.com' }
           const result2 = await result.json()
-          console.log('logged in ? :', result2.success, ' res:', result2.status)
+          console.log('logged in ? :', result2, ' res:', result2.status)
           // Add logic here to look up the user from the credentials supplied
           if (result2.success) {
             user.id = String(result2.success.id)
@@ -67,21 +68,21 @@ export const authOptions = {
     signIn: '/Login',
     error: '/Login',
   },
-  callbacks: {
-    // @ts-ignore
-    // async signIn({ account, profile }) {
-    //   if (account.provider === "facebook") {
-    //     // we can do DB queries here
-    //     console.log({
-    //       verified: profile.password,
-    //       name: profile.name,
-    //       email: profile.email,
-    //       lastName: account.password,
-    //     });
-    //     return true;
-    //   }
-    // },
-  },
+  // callbacks: {
+  //   // @ts-ignore
+  //   // async signIn({ account, profile }) {
+  //   //   if (account.provider === "facebook") {
+  //   //     // we can do DB queries here
+  //   //     console.log({
+  //   //       verified: profile.password,
+  //   //       name: profile.name,
+  //   //       email: profile.email,
+  //   //       lastName: account.password,
+  //   //     });
+  //   //     return true;
+  //   //   }
+  //   // },
+  // },
 }
 // @ts-ignore
 export default NextAuth(authOptions)

@@ -14,6 +14,7 @@ export default function ContactUs({}: Props) {
           alt={''}
           className="trasition-all relative object-cover object-[0px,90%] duration-[4000ms] hover:scale-110"
           fill
+          sizes="100vw"
         ></Image>
       </div>
       {/* grid-rows-[3fr_1fr]  */}

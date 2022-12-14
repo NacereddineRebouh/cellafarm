@@ -3,20 +3,13 @@ import React, { useEffect } from 'react'
 import ProductCard2 from '../../../Components/ProductCard2'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
-import {
-  ChevronDownIcon,
-  XMarkIcon,
-  FunnelIcon,
-} from '@heroicons/react/24/outline'
+import { Dialog, Disclosure, Transition } from '@headlessui/react'
+import { XMarkIcon, FunnelIcon } from '@heroicons/react/24/outline'
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid'
 import PriceSlider from '../../../Components/PriceSlider'
-import Button from '@mui/material/Button'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
 import RatingCom from '../../../Components/RatingComp'
 import cover from '../../../public/Images/cover2.jpg'
 import SearchInput from '../../../Components/SearchInput'
-import { FlightRouterState } from 'next/dist/server/app-render'
 
 type Props = {}
 interface Data {
@@ -122,10 +115,10 @@ export default function ProductsPage({}: Props) {
       }
     })
     console.log(FilterCategories.toString())
-    const url=process.env.NEXT_PUBLIC_App_URL+"/api/fetch/Search?"
+    const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/Search?'
     console.log(url)
     const res = await fetch(
-       url+
+      url +
         new URLSearchParams({
           SearchValue: searchValue,
           category: FilterCategories.toString(),
@@ -136,9 +129,8 @@ export default function ProductsPage({}: Props) {
     console.log(data)
     setproducts(data)
   }
-
   async function getProducts() {
-    const url=process.env.NEXT_PUBLIC_App_URL+"/api/fetch/Products"
+    const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/Products'
     console.log(url)
     const res = await fetch(url)
     const data = await res.json()
@@ -150,9 +142,8 @@ export default function ProductsPage({}: Props) {
   useEffect(() => {
     getProducts()
   }, [])
-
   return (
-    <div className="mx-auto mt-20 h-screen max-w-[2200px]">
+    <div className="mx-auto mt-20 h-screen max-w-[2200px] overflow-visible">
       <div className="grid grid-cols-1 gap-x-3 px-4 py-2 md:grid-cols-[300px_minmax(0px,1fr)] md:px-7 md:pl-0 lg:pl-[120px]">
         {/* filters */}
         <div className="sticky top-[84px] col-start-1 hidden h-[900px] w-[300px] divide-y justify-self-end rounded-r-xl border-[1px] border-gray-300 bg-white  md:flex md:flex-col lg:w-[420px]">
@@ -161,7 +152,7 @@ export default function ProductsPage({}: Props) {
             Filters
           </div>
           {/* Categories */}
-          <div className="flex flex-col divide-y overflow-y-scroll scrollbar-thin scrollbar-track-gray-400/40 scrollbar-thumb-green-400">
+          <div className="flex flex-col divide-y overflow-visible">
             <div className="px-7 ">
               <main className="mx-auto px-6">
                 <section aria-labelledby="products-heading">
@@ -470,7 +461,7 @@ export default function ProductsPage({}: Props) {
           </div>
           <h2 className="sr-only">Products</h2>
           {products?.length > 0 ? (
-            <div className="grid grid-cols-1 gap-y-4 gap-x-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-y-4 gap-x-2 overflow-visible lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {products?.map((product: Data) => (
                 <ProductCard2 key={product.id} product={product} />
               ))}
@@ -486,7 +477,7 @@ export default function ProductsPage({}: Props) {
                   height={800}
                 />
                 <div className="truncate text-center text-sm font-semibold italic tracking-widest text-stone-900 md:overflow-auto md:text-xl">
-                  Sorry, we couldn't find any results !
+                  Sorry, we couldnt find any results !
                 </div>
               </div>
               {/* <button

@@ -20,7 +20,7 @@ export default function LoginPage({}: Props) {
     setPassword('')
     setname('')
     if (useSearchparams.get('error') != null) {
-      alert('wrong Creds')
+      // alert('wrong Creds')
       setSection(
         'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none'
       )
@@ -39,11 +39,11 @@ export default function LoginPage({}: Props) {
     console.log('-------------', callB)
     const status = await signIn('cred', {
       callbackUrl: callB ?? '/',
-      redirect: true,
+      redirect: false,
       ...payload,
     })
 
-    console.log(status)
+    console.log('::::' + status)
     // if (status?.ok) {
     //   console.log("ok");
     //   // router.push("/");
