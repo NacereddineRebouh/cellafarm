@@ -1,5 +1,5 @@
 import React from 'react'
-import { notFound } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { La_Belle_Aurore } from '@next/font/google'
 import { Icon, addIcon } from '@iconify/react/dist/offline'
@@ -73,9 +73,9 @@ export default async function page({ params }: PostPageProps) {
   const prod = await getProductById(slug)
   console.log('------------Generer---------')
 
-  if (prod.status === 404) {
-    notFound()
-  }
+  // if (prod.status === 404) {
+  //   notFound()
+  // }
   let product: Data = prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
@@ -124,13 +124,13 @@ export default async function page({ params }: PostPageProps) {
             </div>
           </div>
           <div className="h-full w-full">
-            {/* <TabComponent prod={product} /> */}
+            <TabComponent prod={product} />
           </div>
           <div className="absolute bottom-0 right-0 h-full max-h-[40%] w-full pb-7 pl-7 xl:pb-12 xl:pl-12 4xl:pb-20 4xl:pl-20 ">
             <div className="h-full w-full self-end rounded-tl-[52px] rounded-bl-[52px] bg-zinc-700 ">
-              {/* <BuyComponent
+              <BuyComponent
                 price={product.price as unknown as string}
-              ></BuyComponent> */}
+              ></BuyComponent>
             </div>
           </div>
         </div>
