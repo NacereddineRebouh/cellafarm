@@ -21,15 +21,15 @@ type Props = {
 }
 
 export default function TabComponent({ prod }: Props) {
-  // const [path, setPath] = useState<string | null>(usePathname())
-  // let pathname = usePathname()
+  const [path, setPath] = useState<string | null>(usePathname())
+  let pathname = usePathname()
 
-  // useEffect(() => {
-  //   console.log('----------path changed----------')
-  //   require('flowbite/dist/flowbite.js')
-  //   // typeof window ?  : null
-  //   // console.log(typeof window)
-  // }, [path])
+  useEffect(() => {
+    // console.log('----------path changed----------')
+    require('flowbite/dist/flowbite.js')
+    // typeof window ?  : null
+    // console.log(typeof window)
+  }, [path])
 
   return (
     <div>
@@ -132,7 +132,7 @@ export default function TabComponent({ prod }: Props) {
 
       {/* eslint-disable-next-line @next/next/no-sync-scripts */}
       {/* <script src="../../node_modules/flowbite/dist/flowbite.js"></script> */}
-      <Script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></Script>
+      {/* <Script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></Script> */}
     </div>
   )
 }
