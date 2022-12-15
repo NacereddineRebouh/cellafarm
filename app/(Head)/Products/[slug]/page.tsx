@@ -59,7 +59,6 @@ async function getProductById(Id: number | string) {
   //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
   // )
   const data = await res.json()
-  alert(data)
   return data
 }
 
