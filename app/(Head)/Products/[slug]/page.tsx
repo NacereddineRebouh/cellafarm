@@ -70,6 +70,7 @@ export default async function page({ params }: PostPageProps) {
             fill
             sizes="(max-width: 1024px) 80vw, 60vw"
           ></Image>
+
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
             ref_{product.id ?? '?'}
           </div>
