@@ -100,7 +100,7 @@ export default async function page({ params }: PostPageProps) {
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
             <p>ref_{product?.id ?? slug}</p>
             <p>ref_{prod?.Id ?? JSON.stringify(prod)}</p>
-            <p>ref_{product?.id ?? JSON.stringify(prod?.message)}</p>
+            <p>ref_{product?.id ?? JSON.stringify(product)}</p>
             <p>ref_{product?.id ?? JSON.stringify(prod.message)}</p>
             <p>ref_{product?.id ?? prod?.Id}</p>
           </div>
