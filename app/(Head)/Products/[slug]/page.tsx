@@ -37,6 +37,18 @@ interface PostPageProps {
     slug: string
   }
 }
+async function getProducts() {
+  const url = process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/list'
+  console.log(url)
+  const res = await fetch(url)
+  return res.json()
+}
+export async function generateStaticParams() {
+  const users = await getProducts()
+  return users.map((u: Data) => ({
+    slug: u.id + '',
+  }))
+}
 
 async function getProductById(Id: number | string) {
   const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/ProductById?'
@@ -67,9 +79,9 @@ export default async function page({ params }: PostPageProps) {
   const prod = await getProductById(slug)
   console.log('------------Generer---------')
 
-  if (prod?.status === 404) {
-    notFound()
-  }
+  // if (prod?.status === 404) {
+  //   notFound()
+  // }
   const product: Data = await prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
@@ -85,7 +97,7 @@ export default async function page({ params }: PostPageProps) {
             sizes="(max-width: 1024px) 80vw, 60vw"
           ></Image>
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
-            {/* <p>ref_{product.id ?? '?'}</p> */}
+            <p>ref_{product?.id ?? '?'}</p>
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
