@@ -124,7 +124,7 @@ export default async function page({ params }: PostPageProps) {
             </div>
           </div>
           <div className="h-full w-full">
-            <TabComponent prod={product} />
+            {/* <TabComponent prod={product} /> */}
           </div>
           <div className="absolute bottom-0 right-0 h-full max-h-[40%] w-full pb-7 pl-7 xl:pb-12 xl:pl-12 4xl:pb-20 4xl:pl-20 ">
             <div className="h-full w-full self-end rounded-tl-[52px] rounded-bl-[52px] bg-zinc-700 ">
