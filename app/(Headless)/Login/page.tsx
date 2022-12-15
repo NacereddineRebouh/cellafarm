@@ -47,7 +47,7 @@ export default function LoginPage({}: Props) {
       ...payload,
     })
 
-    console.log('::::' + status)
+    console.log('::::' + status?.status)
     // if (status?.ok) {
     //   console.log("ok");
     //   // router.push("/");
