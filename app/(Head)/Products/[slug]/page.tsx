@@ -92,7 +92,7 @@ export default async function page({ params }: PostPageProps) {
             sizes="(max-width: 1024px) 80vw, 60vw"
           ></Image> */}
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
-            <p>ref_{product?.id ?? '?'}</p>
+            {/* <p>ref_{product?.id ?? '?'}</p> */}
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
