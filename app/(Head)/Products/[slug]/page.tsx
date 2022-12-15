@@ -38,28 +38,9 @@ interface PostPageProps {
   }
 }
 
-async function getProducts() {
-  const url = process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/list'
-  console.log(url)
-  const res = await fetch(url)
-  return res.json()
-}
-// export async function generateStaticParams() {
-//   const users = await getProducts()
-//   return users.map((u: Data) => ({
-//     slug: u.id + '',
-//   }))
-// }
-
 async function getProductById(Id: number | string) {
   const url =
     process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
-  // const url =
-  //   process.env.NEXT_PUBLIC_BACKEND_API +
-  //   '/api/Products/getProduct/' +
-  //   new URLSearchParams({
-  //     SearchValue: Id as string,
-  //   })
   const res = await fetch(
     process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
   )
@@ -70,13 +51,12 @@ async function getProductById(Id: number | string) {
 
 export default async function page({ params }: PostPageProps) {
   const { slug } = params
-  // const prod = await getProductById(slug)
+  const prod = await getProductById(slug)
   console.log('------------Generer---------')
 
   // if (prod.status === 404) {
   //   notFound()
   // }
-  let product = null
   // let product: Data = prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
