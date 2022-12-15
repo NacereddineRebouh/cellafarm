@@ -91,7 +91,7 @@ export default async function page({ params }: PostPageProps) {
             sizes="(max-width: 1024px) 80vw, 60vw"
           ></Image> */}
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
-            ref_{product.id ?? '?'}
+            {/* ref_{product.id ?? '?'} */}
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
@@ -99,21 +99,21 @@ export default async function page({ params }: PostPageProps) {
             {/* bg-teal-700 */}
             <div className="flex h-full w-full flex-col items-start justify-center p-2">
               <div className="flex justify-start font-bold uppercase text-stone-200 md:mb-5">
-                {product.category ?? 'No category'}
+                {/* {product.category ?? 'No category'} */}
               </div>
               <div className="flex justify-start text-[29px] text-stone-50 md:text-[35px]">
-                {product.name ?? 'not listed'}
+                {/* {product.name ?? 'not listed'} */}
               </div>
               <div className="flex justify-start text-sm font-medium italic tracking-wide text-stone-700">
                 By{' '}
                 <span className="font-semibold uppercase">
-                  {product.By ?? '...'}
+                  {/* {product.By ?? '...'} */}
                 </span>
               </div>
               <div
                 className={`flex w-full flex-1 flex-row items-center justify-between text-[40px] uppercase text-stone-50 md:text-[50px] ${belle.className}`}
               >
-                <p className="pt-4">{'$' + product.price ?? 'Free'}</p>
+                {/* <p className="pt-4">{'$' + product.price ?? 'Free'}</p> */}
                 <div className="flex h-full flex-row items-center gap-x-2">
                   <Icon icon="star" className="w-6 md:w-10 lg:w-9" />
                   <Icon icon="star" className="w-6 md:w-10 lg:w-9" />
