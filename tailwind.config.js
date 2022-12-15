@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     screens: {
+
+      'zero': '1px',
+      // => @media (min-width: 640px) { ... }
       'sm': '620px',
       // => @media (min-width: 640px) { ... }
  
@@ -34,8 +37,12 @@ module.exports = {
   },
     extend: {
       dropShadow: {
-        'small': '0 10px 8px  rgb(252, 217, 189, 0.95)',
-        'small2': '0 10px 8px  rgb(167, 243 ,208 , 0.8)',
+        'small': '0 10px 8px rgb(252, 217, 189, 0.95)',
+        'small2': '0 10px 8px rgb(167, 243 ,208 , 0.8)',
+        'small3Yellow': '0px 2px 8px rgb(251 ,200 ,36 , .4)',
+        'small2Yellow': '0px 1px 5px rgb(251 ,200 ,36 , .3)',
+        'small2Stone': '0px 1px 5px rgb(250 ,250 ,249 , .3)',
+        'small3Stone': '0px 2px 8px rgb(250 ,250 ,249 , .4)',
         '4xl': [
             '0 35px 35px rgba(0, 0, 0, 0.25)',
             '0 45px 65px rgba(0, 0, 0, 0.15)'

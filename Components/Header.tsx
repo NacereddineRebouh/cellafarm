@@ -15,7 +15,7 @@ export default function Header({}: Props) {
     return classes.filter(Boolean).join(' ')
   }
   return (
-    <header className="bg-gray-100/40">
+    <div className="bg-gray-100/40">
       <Disclosure as="nav">
         {({ open }) => (
           <>
@@ -61,7 +61,7 @@ export default function Header({}: Props) {
                       blog
                     </div>
                   </Link>
-                  <Link className="hidden md:flex" href="#ContactUs">
+                  <Link className="hidden md:flex" href="/#ContactUs">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Contact
                     </div>
@@ -86,7 +86,7 @@ export default function Header({}: Props) {
                       Blog
                     </div>
                   </Link>
-                  <Link className="" href="#ContactUs">
+                  <Link className="" href="/#ContactUs">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Contact
                     </div>
@@ -97,6 +97,6 @@ export default function Header({}: Props) {
           </>
         )}
       </Disclosure>
-    </header>
+    </div>
   )
 }

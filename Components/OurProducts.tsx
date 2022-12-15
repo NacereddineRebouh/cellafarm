@@ -38,7 +38,7 @@ export default function OurProducts({}: Props) {
           <br /> over the world to thousands of our partners
         </span>
       </div>
-      <div className="row-start-2 flex snap-mandatory flex-row items-center justify-start gap-4 overflow-x-scroll scroll-smooth px-5">
+      <div className="row-start-2 flex snap-mandatory snap-center flex-row items-center justify-start gap-4 overflow-x-scroll scroll-smooth px-5 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-green-300">
         {prods.map((prod, i) => (
           <ProductCard
             key={i}

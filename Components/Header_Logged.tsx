@@ -13,7 +13,7 @@ type Props = {
 
 export default function Header_Logged({ session }: Props) {
   return (
-    <header className="border-[1px] bg-[#f3ffe9]/40 shadow-sm">
+    <div className="border-[1px] bg-[#f3ffe9]/40 shadow-sm">
       <Disclosure as="nav">
         {({ open }) => (
           <>
@@ -59,7 +59,7 @@ export default function Header_Logged({ session }: Props) {
                       Blog
                     </div>
                   </Link>
-                  <Link className="hidden md:flex" href="#ContactUs">
+                  <Link className="hidden md:flex" href="/#ContactUs">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Contact
                     </div>
@@ -82,7 +82,7 @@ export default function Header_Logged({ session }: Props) {
                       Blog
                     </div>
                   </Link>
-                  <Link className="" href="#ContactUs">
+                  <Link className="" href="/#ContactUs">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Contact
                     </div>
@@ -93,6 +93,6 @@ export default function Header_Logged({ session }: Props) {
           </>
         )}
       </Disclosure>
-    </header>
+    </div>
   )
 }

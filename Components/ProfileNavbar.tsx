@@ -5,6 +5,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import Image from 'next/image'
 type Props = {}
 
 export default function ProfileNavbar({}: Props) {
@@ -16,7 +17,7 @@ export default function ProfileNavbar({}: Props) {
       <Menu as="div" className="relative">
         <Menu.Button
           type="button"
-          className="rounded-full bg-green-400 p-1 text-gray-100 transition-all duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-green-400"
+          className="rounded-full bg-green-400 p-1 text-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-green-400 hover:text-white"
         >
           {/* <span className="sr-only">View notifications</span> */}
           {/* <BellIcon className="h-6 w-6" aria-hidden="true"/> */}
@@ -57,10 +58,12 @@ export default function ProfileNavbar({}: Props) {
         <div>
           <Menu.Button className=" focus:ring-offset-3 flex rounded-full text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-amber-500 focus:ring-offset-amber-400 ">
             <span className="sr-only">Open user menu</span>
-            <img
+            <Image
               className="h-11 w-11 rounded-full "
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
+              width={44}
+              height={44}
             />
           </Menu.Button>
         </div>

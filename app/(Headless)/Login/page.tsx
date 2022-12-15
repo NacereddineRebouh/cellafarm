@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import { useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
 // import "../../public/mobile-login-styles.css";
@@ -25,11 +25,15 @@ export default function LoginPage({}: Props) {
         'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none'
       )
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   //facebook Handler Function
-  const handleFacebookLogin = async () =>
-    signIn('facebook', { callbackUrl: 'https://cellafarm.vercel.app/' })
+  const handleFacebookLogin = async () => {
+    let callB = useSearchparams.get('callbackUrl') ?? null
+    console.log('-------------facebook:', callB)
+    signIn('facebook', { callbackUrl: callB ?? '/' })
+  }
   // @ts-ignore
   const handleCredLogin = async (e) => {
     e.preventDefault()

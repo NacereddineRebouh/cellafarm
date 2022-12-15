@@ -1,20 +1,12 @@
 import React from 'react'
 import Hero from '../../Components/Hero'
-import airbnb from '../../public/Images/airbnb.png'
-import pendo from '../../public/Images/pendo.png'
-import framer from '../../public/Images/framer.png'
-import hima from '../../public/Images/himma.png'
-import tree from '../../public/Images/tree.png'
-import op from '../../public/Images/opendoor.png'
 import Image from 'next/image'
 import OurStory from '../../Components/OurStory'
 import OurProducts from '../../Components/OurProducts'
 import JoinUs from '../../Components/JoinUs'
 import ContactUs from '../../Components/ContactUs'
-import Header from '../../Components/Header'
+
 import { unstable_getServerSession } from 'next-auth/next'
-import Header_Logged from '../../Components/Header_Logged'
-import Header3 from '../../Components/Header3'
 
 type Props = {}
 
@@ -110,18 +102,21 @@ export default async function HomePage({}: Props) {
       {/* Our Featured Product */}
       <section
         id="ourFeaturedProduct"
-        className=" mt-28 flex justify-center md:mt-44"
+        className=" mx-auto mt-28 flex  justify-center md:mt-44"
       >
         <OurProducts />
       </section>
 
       {/* Join us */}
-      <section id="joinUs" className="mt-32 flex justify-center bg-white">
+      <section
+        id="joinUs"
+        className="mx-auto mt-32 flex  justify-center bg-white"
+      >
         <JoinUs />
       </section>
 
       {/* About us */}
-      <footer id="ContactUs" className="flex justify-center">
+      <footer id="ContactUs" className="mx-auto flex justify-center">
         <ContactUs />
       </footer>
     </div>

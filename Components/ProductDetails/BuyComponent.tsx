@@ -43,10 +43,10 @@ export default function BuyComponent({ price }: Props) {
           </div>
         </div>
       </div>
-      <div className="flex h-11 w-full scale-75 cursor-pointer items-center justify-center rounded-full border-2 border-stone-100 font-bold uppercase text-stone-100 transition-all duration-200 active:border-stone-300 active:text-stone-300 md:scale-100">
+      <div className="flex h-11 w-full scale-75 cursor-pointer items-center justify-center rounded-full border-2 border-stone-100 font-bold uppercase text-stone-100  drop-shadow-small2Stone transition-all duration-200 hover:drop-shadow-small3Stone active:border-stone-300 active:text-stone-300 md:scale-100">
         add to my wishlist
       </div>
-      <div className="flex h-11 w-full scale-75 cursor-pointer items-center justify-center rounded-full bg-amber-400 font-bold uppercase text-stone-700 transition-all duration-200 active:bg-amber-300 active:text-stone-500 md:scale-100">
+      <div className="flex h-11 w-full scale-75 cursor-pointer items-center justify-center rounded-full bg-amber-400 font-bold uppercase text-stone-700  drop-shadow-small2Yellow transition-all duration-500 hover:drop-shadow-small3Yellow active:bg-amber-300 active:text-stone-500 md:scale-100">
         add to cart
       </div>
     </div>

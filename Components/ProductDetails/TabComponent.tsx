@@ -1,10 +1,11 @@
 'use client'
 import { Tabs } from 'flowbite-react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 // import 'flowbite/dist/flowbite'
+import { usePathname } from 'next/navigation'
 
 interface Data {
   id: string
@@ -23,10 +24,15 @@ type Props = {
 }
 
 export default function TabComponent({ prod }: Props) {
+  const [path, setPath] = useState<string | null>(usePathname())
+  let pathname = usePathname()
+
   useEffect(() => {
-    typeof window ? require('flowbite/dist/flowbite.js') : null
-    console.log(typeof window)
-  }, [])
+    console.log('----------path changed----------')
+    require('flowbite/dist/flowbite.js')
+    // typeof window ?  : null
+    // console.log(typeof window)
+  }, [path])
 
   return (
     <div>
@@ -46,7 +52,7 @@ export default function TabComponent({ prod }: Props) {
           >
             <li className="mr-2" role="presentation">
               <button
-                className="inline-block rounded-t-lg border-b-2 border-transparent py-4 px-4 text-center text-xs font-bold uppercase text-zinc-700 transition-all duration-200 aria-selected:border-stone-400 aria-selected:text-stone-100 hover:border-transparent hover:text-stone-100 aria-selected:hover:border-stone-400 aria-selected:hover:text-stone-100 md:text-sm  xl:text-lg"
+                className="inline-block rounded-t-lg py-4 px-4 text-center text-xs font-bold uppercase text-zinc-700 transition-all duration-200 aria-selected:text-stone-100 hover:text-stone-100 aria-selected:hover:text-stone-100 zero:border-[#74827E]/0  md:text-sm xl:text-lg"
                 id="Description-tab"
                 data-tabs-target="#Description"
                 type="button"
@@ -59,7 +65,7 @@ export default function TabComponent({ prod }: Props) {
             </li>
             <li className="mr-2" role="presentation">
               <button
-                className="inline-block rounded-t-lg border-b-2 border-transparent py-4 px-4 text-center text-xs font-bold uppercase text-zinc-700 transition-all duration-200 aria-selected:border-stone-400 aria-selected:text-stone-100 hover:border-transparent hover:text-stone-100 aria-selected:hover:border-stone-400 aria-selected:hover:text-stone-100 md:text-sm  xl:text-lg"
+                className="inline-block rounded-t-lg py-4 px-4 text-center text-xs font-bold uppercase text-zinc-700 transition-all duration-200 aria-selected:text-stone-100 hover:text-stone-100 aria-selected:hover:text-stone-100 zero:border-[#74827E]/0  md:text-sm xl:text-lg"
                 id="Details-tab"
                 data-tabs-target="#Details"
                 type="button"
@@ -72,7 +78,7 @@ export default function TabComponent({ prod }: Props) {
             </li>
             <li className="mr-2 border-transparent" role="presentation">
               <button
-                className="inline-block rounded-t-lg border-b-2 border-transparent py-4 px-4 text-center text-xs font-bold uppercase text-zinc-700 transition-all duration-200 aria-selected:border-stone-400 aria-selected:text-stone-100 hover:border-transparent hover:text-stone-100 aria-selected:hover:border-stone-400 aria-selected:hover:text-stone-100 md:text-sm  xl:text-lg"
+                className="inline-block rounded-t-lg py-4 px-4 text-center text-xs font-bold uppercase text-zinc-700 transition-all duration-200 aria-selected:text-stone-100 hover:text-stone-100 aria-selected:hover:text-stone-100 zero:border-[#74827E]/0  md:text-sm xl:text-lg"
                 id="Comments-tab"
                 data-tabs-target="#Comments"
                 type="button"
