@@ -68,7 +68,7 @@ export default async function page({ params }: PostPageProps) {
   const prod = await getProductById(slug)
   console.log('------------Generer---------')
 
-  if (prod.status === 404) {
+  if (prod?.status === 404) {
     notFound()
   }
   const product: Data = await prod?.message
