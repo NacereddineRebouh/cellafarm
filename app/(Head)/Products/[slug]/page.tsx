@@ -102,7 +102,7 @@ export default async function page({ params }: PostPageProps) {
             <p>ref_{prod?.Id ?? JSON.stringify(prod)}</p>
             <p>ref_{product?.id ?? JSON.stringify(product)}</p>
             <p>ref_{product?.id ?? JSON.stringify(prod.message)}</p>
-            <p>ref_{product?.id ?? prod?.Id}</p>
+            <p>ref_{product?.id ?? prod.status + ''}</p>
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
