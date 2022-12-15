@@ -5,9 +5,9 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 export const authOptions = {
   // Configure one or more authentication providers
   secret: process.env.NEXTAUTH_SECRET,
-  session: {
-    strategy: 'jwt',
-  },
+  // session: {
+  //   strategy: 'jwt',
+  // },
   providers: [
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID as string,
