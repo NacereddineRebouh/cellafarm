@@ -1,5 +1,5 @@
 import React from 'react'
-// import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { La_Belle_Aurore } from '@next/font/google'
 import { Icon, addIcon } from '@iconify/react/dist/offline'
@@ -39,13 +39,26 @@ interface PostPageProps {
 }
 
 async function getProductById(Id: number | string) {
-  const url =
-    process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
+  const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/ProductById?'
+  // console.log(
+  //   '----------------------' +
+  //     url +
+  //     new URLSearchParams({
+  //       SearchValue: Id + '',
+  //     })
+  // )
   const res = await fetch(
-    process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
+    url +
+      new URLSearchParams({
+        SearchValue: Id + '',
+      })
   )
+  // const url =
+  //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
+  // const res = await fetch(
+  //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
+  // )
   const data = await res.json()
-  console.log(Id)
   return data
 }
 
@@ -54,24 +67,24 @@ export default async function page({ params }: PostPageProps) {
   const prod = await getProductById(slug)
   console.log('------------Generer---------')
 
-  // if (prod.status === 404) {
-  //   notFound()
-  // }
+  if (prod.status === 404) {
+    notFound()
+  }
   const product: Data = await prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
         {/* cover */}
         <div className="relative w-full flex-initial bg-transparent lg:h-full lg:w-[60%]">
-          {/* <Image
+          <Image
             src={product.product_image}
             alt={''}
             className="absolute top-0 left-0 object-contain transition-all duration-300 2xl:object-cover"
             fill
             sizes="(max-width: 1024px) 80vw, 60vw"
-          ></Image> */}
+          ></Image>
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
-            <p>ref_{product.id ?? '?'}</p>
+            {/* <p>ref_{product.id ?? '?'}</p> */}
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
@@ -79,21 +92,21 @@ export default async function page({ params }: PostPageProps) {
             {/* bg-teal-700 */}
             <div className="flex h-full w-full flex-col items-start justify-center p-2">
               <div className="flex justify-start font-bold uppercase text-stone-200 md:mb-5">
-                <p>{product.category ?? 'No category'}</p>
+                {/* <p>{product.category ?? 'No category'}</p> */}
               </div>
               <div className="flex justify-start text-[29px] text-stone-50 md:text-[35px]">
-                <p>{product.name ?? 'not listed'}</p>
+                {/* <p>{product.name ?? 'not listed'}</p> */}
               </div>
               <div className="flex justify-start text-sm font-medium italic tracking-wide text-stone-700">
                 By{' '}
                 <span className="font-semibold uppercase">
-                  <p>{product.By ?? '...'}</p>
+                  {/* <p>{product.By ?? '...'}</p> */}
                 </span>
               </div>
               <div
                 className={`flex w-full flex-1 flex-row items-center justify-between text-[40px] uppercase text-stone-50 md:text-[50px] ${belle.className}`}
               >
-                <p className="pt-4">{'$' + product.price ?? 'Free'}</p>
+                {/* <p className="pt-4">{'$' + product.price ?? 'Free'}</p> */}
                 <div className="flex h-full flex-row items-center gap-x-2">
                   <Icon icon="star" className="w-6 md:w-10 lg:w-9" />
                   <Icon icon="star" className="w-6 md:w-10 lg:w-9" />
