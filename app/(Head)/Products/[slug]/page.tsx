@@ -75,7 +75,7 @@ export default async function page({ params }: PostPageProps) {
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
         {/* cover */}
-        {product.id + ''}
+        {product?.id + ''}
         <div className="relative w-full flex-initial bg-transparent lg:h-full lg:w-[60%]">
           {/* <Image
             src={product.product_image}
