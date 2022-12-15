@@ -70,25 +70,26 @@ async function getProductById(Id: number | string) {
 
 export default async function page({ params }: PostPageProps) {
   const { slug } = params
-  const prod = await getProductById(slug)
+  // const prod = await getProductById(slug)
   console.log('------------Generer---------')
 
   // if (prod.status === 404) {
   //   notFound()
   // }
-  let product: Data = prod?.message
+  let product = null
+  // let product: Data = prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
         {/* cover */}
         <div className="relative w-full flex-initial bg-transparent lg:h-full lg:w-[60%]">
-          <Image
+          {/* <Image
             src={product.product_image}
             alt={''}
             className="absolute top-0 left-0 object-contain transition-all duration-300 2xl:object-cover"
             fill
             sizes="(max-width: 1024px) 80vw, 60vw"
-          ></Image>
+          ></Image> */}
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
             ref_{product.id ?? '?'}
           </div>
@@ -124,13 +125,13 @@ export default async function page({ params }: PostPageProps) {
             </div>
           </div>
           <div className="h-full w-full">
-            <TabComponent prod={product} />
+            {/* <TabComponent prod={product} /> */}
           </div>
           <div className="absolute bottom-0 right-0 h-full max-h-[40%] w-full pb-7 pl-7 xl:pb-12 xl:pl-12 4xl:pb-20 4xl:pl-20 ">
             <div className="h-full w-full self-end rounded-tl-[52px] rounded-bl-[52px] bg-zinc-700 ">
-              <BuyComponent
+              {/* <BuyComponent
                 price={product.price as unknown as string}
-              ></BuyComponent>
+              ></BuyComponent> */}
             </div>
           </div>
         </div>
