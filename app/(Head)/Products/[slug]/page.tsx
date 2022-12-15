@@ -57,19 +57,19 @@ export default async function page({ params }: PostPageProps) {
   // if (prod.status === 404) {
   //   notFound()
   // }
-  const product: Data = await prod?.message
+  const product: Data = prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
         {/* cover */}
         <div className="relative w-full flex-initial bg-transparent lg:h-full lg:w-[60%]">
-          <Image
+          {/* <Image
             src={product.product_image}
             alt={''}
             className="absolute top-0 left-0 object-contain transition-all duration-300 2xl:object-cover"
             fill
             sizes="(max-width: 1024px) 80vw, 60vw"
-          ></Image>
+          ></Image> */}
 
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
             ref_{product.id ?? '?'}
