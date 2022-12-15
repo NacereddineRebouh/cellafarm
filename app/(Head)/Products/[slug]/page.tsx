@@ -23,14 +23,14 @@ type Props = {
 type Data = {
   id: string
   name: string
-  price: number
-  product_image: string
   description: string
   By: string
+  price: number
   number_of_purchases: number
+  product_image: string
+  category: string
   created_at: Date
   updated_at: Date
-  category: string
 }
 interface PostPageProps {
   params: {
@@ -77,13 +77,13 @@ async function getProductById(Id: number | string) {
 
 export default async function page({ params }: PostPageProps) {
   const { slug } = params
-  const prod = await getProductById(slug)
+  const prod: Data = await getProductById(slug)
   console.log('------------Generer---------')
 
   // if (prod?.status === 404) {
   //   notFound()
   // }
-  const product: Data = prod.message
+  // const product: Data = prod.message as Data
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
@@ -91,18 +91,17 @@ export default async function page({ params }: PostPageProps) {
         {/* {product?.id + ''} */}
         <div className="relative w-full flex-initial bg-transparent lg:h-full lg:w-[60%]">
           <Image
-            src={product?.product_image}
+            src={prod?.product_image}
             alt={''}
             className="absolute top-0 left-0 object-contain transition-all duration-300 2xl:object-cover"
             fill
             sizes="(max-width: 1024px) 80vw, 60vw"
           ></Image>
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
-            <p>ref_{product?.id ?? slug}</p>
-            <p>ref_{prod?.Id ?? JSON.stringify(prod)}</p>
-            <p>ref_{product?.id ?? JSON.stringify(product)}</p>
-            <p>ref_{product?.id ?? JSON.stringify(prod.message)}</p>
-            <p>ref_{product?.id ?? prod.status + ''}</p>
+            <p>ref_{prod?.id ?? slug}</p>
+            <p>ref_{prod?.id ?? ''}</p>
+            <p>ref_{prod?.id ?? ''}</p>
+            <p>ref_{prod?.id ?? prod.price + ''}</p>
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
