@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 
 type Props = {
-  price: string
+  price: number
 }
 
 export default function BuyComponent({ price }: Props) {
@@ -39,7 +39,7 @@ export default function BuyComponent({ price }: Props) {
             total
           </div>
           <div className="flex h-12 w-32 flex-row items-center justify-around rounded-full bg-zinc-800/60 p-1 text-xl text-zinc-500">
-            {'$' + ((price as unknown as number) * count).toFixed(2)}
+            {'$' + (price * count).toFixed(2)}
           </div>
         </div>
       </div>
