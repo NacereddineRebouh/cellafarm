@@ -57,7 +57,7 @@ export default async function page({ params }: PostPageProps) {
   // if (prod.status === 404) {
   //   notFound()
   // }
-  const product: Data = prod?.message
+  const product = prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
