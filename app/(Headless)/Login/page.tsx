@@ -43,7 +43,7 @@ export default function LoginPage({}: Props) {
     console.log('-------------', callB)
     const status = await signIn('cred', {
       callbackUrl: callB ?? '/',
-      redirect: false,
+      redirect: true,
       ...payload,
     })
 
