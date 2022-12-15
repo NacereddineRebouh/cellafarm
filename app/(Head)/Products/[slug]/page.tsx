@@ -52,7 +52,7 @@ async function getProductById(Id: number | string) {
 export default async function page({ params }: PostPageProps) {
   const { slug } = params
   const product = await getProductById(slug)
-  console.log('------------Generer---------')
+  console.log('------------Generer---------', product?.message.id)
 
   // if (prod.status === 404) {
   //   notFound()
@@ -72,7 +72,7 @@ export default async function page({ params }: PostPageProps) {
           ></Image> */}
 
           <div className="absolute top-[2%] left-[2%] cursor-default rounded-xl border-[2px] border-zinc-200 py-2 px-3 font-medium text-zinc-400">
-            ref_{product?.message.id ?? '?'}
+            {/* ref_{product?.message.id ?? '?'} */}
           </div>
         </div>
         <div className="relative grid w-full flex-initial grid-rows-[30%_30%_40%] bg-[#74827E] p-7 lg:h-full lg:w-[40%]  xl:p-12 4xl:p-20">
@@ -80,21 +80,21 @@ export default async function page({ params }: PostPageProps) {
             {/* bg-teal-700 */}
             <div className="flex h-full w-full flex-col items-start justify-center p-2">
               <div className="flex justify-start font-bold uppercase text-stone-200 md:mb-5">
-                {product?.message.category ?? 'No category'}
+                {/* {product?.message.category ?? 'No category'} */}
               </div>
               <div className="flex justify-start text-[29px] text-stone-50 md:text-[35px]">
-                {product?.message.name ?? 'not listed'}
+                {/* {product?.message.name ?? 'not listed'} */}
               </div>
               <div className="flex justify-start text-sm font-medium italic tracking-wide text-stone-700">
                 By{' '}
                 <span className="font-semibold uppercase">
-                  {product?.message.By ?? '...'}
+                  {/* {product?.message.By ?? '...'} */}
                 </span>
               </div>
               <div
                 className={`flex w-full flex-1 flex-row items-center justify-between text-[40px] uppercase text-stone-50 md:text-[50px] ${belle.className}`}
               >
-                <p className="pt-4">{'$' + product?.message.price ?? 'Free'}</p>
+                {/* <p className="pt-4">{'$' + product?.message.price ?? 'Free'}</p> */}
                 <div className="flex h-full flex-row items-center gap-x-2">
                   <Icon icon="star" className="w-6 md:w-10 lg:w-9" />
                   <Icon icon="star" className="w-6 md:w-10 lg:w-9" />
