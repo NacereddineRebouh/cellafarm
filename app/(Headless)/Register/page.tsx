@@ -45,6 +45,7 @@ export default function Register({}: Props) {
     //   alert(`Error! status: ${result.status}`);
     // }
     const result2 = await result.json()
+    console.log(JSON.stringify(result2))
     console.log(result2.success)
     if (result2.status === 201) {
       alert(result2.success)

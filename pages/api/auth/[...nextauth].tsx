@@ -1,14 +1,24 @@
 import NextAuth from 'next-auth'
 import FacebookProvider from 'next-auth/providers/facebook'
+import GoogleProvider from 'next-auth/providers/google'
+import GitHubProvider from 'next-auth/providers/github'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const authOptions = {
   // Configure one or more authentication providers
   secret: process.env.NEXTAUTH_SECRET,
-  // session: {
-  //   strategy: 'jwt',
-  // },
+  session: {
+    strategy: 'jwt',
+  },
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+    }),
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID as string,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string,
@@ -19,14 +29,14 @@ export const authOptions = {
       async authorize(credentials) {
         try {
           // @ts-ignore
-          const { name, password } = credentials
-          console.log(name, password)
+          const { email, password } = credentials
+          console.log(email, password)
           console.log(process.env.NEXT_PUBLIC_BACKEND_API + '/api/login')
           const result = await fetch(
             process.env.NEXT_PUBLIC_BACKEND_API + '/api/login',
             {
               method: 'POST',
-              body: JSON.stringify({ name, password }),
+              body: JSON.stringify({ email, password }),
               headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
@@ -35,32 +45,31 @@ export const authOptions = {
           )
           let user = { id: '1', name: 'J Smith', email: 'jsmith@example.com' }
           const result2 = await result.json()
-          console.log('logged in ? :', result2, ' res:', result2.status)
+          console.log(result2)
+          if (result2.error) {
+            console.log('error')
+          }
           // Add logic here to look up the user from the credentials supplied
           if (result2.success) {
+            console.log(result2.success)
             user.id = String(result2.success.id)
             user.name = result2.success.name
             user.email = result2.success.email
-          } else if (result2.error) {
-            return null
-          }
-
-          if (user) {
-            // Any object returned will be saved in `user` property of the JWT
             return user
           } else {
-            // If you return null then an error will be displayed advising the user to check their details.
             return null
-
-            // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
           }
         } catch (e) {
           return null
         }
       },
       credentials: {
-        name: { label: 'name', type: 'text ', placeholder: 'jsmith' },
-        password: { label: 'Password', type: 'password' },
+        username: {
+          label: 'email',
+          type: 'text',
+          placeholder: 'guest@gmail.com',
+        },
+        password: { label: 'password', type: 'password' },
       },
     }),
   ],
@@ -84,5 +93,6 @@ export const authOptions = {
   //   // },
   // },
 }
+
 // @ts-ignore
 export default NextAuth(authOptions)
