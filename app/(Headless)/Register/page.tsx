@@ -22,45 +22,32 @@ export default function Register({}: Props) {
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
-
-    console.log('Submiting..', { ...formValues })
+    const password_confirmation = formValues.password
+    const name = formValues.name
+    const email = formValues.email
+    const password = formValues.password
+    console.log('Submiting..', {})
     // const result22 = await resdd.json()
 
     const result = await fetch(
       process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
       {
         method: 'POST',
-        body: JSON.stringify({ ...formValues }),
+        body: JSON.stringify({ name, email, password, password_confirmation }),
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          //   headers: {
-          //      "Content-Type": "application/json",
-          //      "X-CSRF-TOKEN'": token
-          //  },
         },
       }
     )
-    // if (!result.ok) {
-    //   alert(`Error! status: ${result.status}`);
-    // }
     const result2 = await result.json()
     console.log(JSON.stringify(result2))
     console.log(result2.success)
-    if (result2.status === 201) {
-      alert(result2.success)
+    if (result2.success) {
       router.push('/Login')
     }
   }
 
-  // const headersList = headers();
-  // const referer = headersList.get("referer");
-  // let classN =
-  //   "absolute rounded-full h-[550px] w-[550px] bg-orange-200/80 blur-sm -top-28 -left-28 -z-10  animate-pulseLong overflow-hidden";
-  // if (referer?.includes("/Login") || referer?.includes("/Register")) {
-  //   console.log("---------------referer includes /Login----------------");
-
-  // }
   const classN =
     'absolute rounded-full h-[550px] w-[550px] bg-emerald-200 blur-sm -top-[10%] -left-28 -z-10  animate-pulseLong '
   const classN2 =
