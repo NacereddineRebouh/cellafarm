@@ -49,18 +49,14 @@ export default function LoginPage({}: Props) {
   // @ts-ignore
   const handleCredLogin = async (e) => {
     e.preventDefault()
-    // console.log("going to", localStorage.getItem("prevPath"));
     const email = name
     const payload = { email, password }
     let callB = useSearchparams.get('callbackUrl') ?? null
-    console.log('-------------', callB)
     const status = await signIn('cred', {
       callbackUrl: callB ?? '/',
       redirect: true,
       ...payload,
     })
-
-    console.log('::::' + status?.status)
   }
 
   return (

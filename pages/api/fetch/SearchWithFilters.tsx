@@ -25,17 +25,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log('sfs::: ', req.query)
   const res1 = await fetch(
     process.env.NEXT_PUBLIC_BACKEND_API +
       '/api/Products/search/' +
       req.body.SearchValue
   )
-  //   console.log('res::', res1)
-  //   const res1 = await fetch(
-  //     'http://127.0.0.1:8000/api/Products/search/' + req.body.SearchValue
-  //   )
-  //   console.log('res::', res1)
+
   const data = await res1.json()
 
   res.json([{ ss: 'ss' }])

@@ -220,7 +220,7 @@ export default function ProductCard2({ product }: Props) {
                   className="ml-2 text-xs font-semibold text-green-700
                             delay-100 group-hover:text-white"
                 >
-                  Live Preview
+                  More Details
                 </div>
               </a>
             </div>

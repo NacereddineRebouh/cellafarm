@@ -21,28 +21,20 @@ type Props = {
 export default function SearchInput({ SetProducts, setSearchValue }: Props) {
   const searchRef = useRef<HTMLInputElement>(null)
   async function searchProducts(val: string) {
-    const url = process.env.NEXT_PUBLIC_App_URL+'/api/fetch/Search?'
-    console.log(url)
-    const res = await fetch(
-      url+new URLSearchParams({ SearchValue: val })
-    )
+    const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/Search?'
+    const res = await fetch(url + new URLSearchParams({ SearchValue: val }))
 
     const data = await res.json()
-    console.log('setting data ::', data)
     SetProducts(data)
-    // console.log(data)
   }
   async function listProducts() {
-    const url = process.env.NEXT_PUBLIC_App_URL +'/api/fetch/Products'
-    console.log(url)
+    const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/Products'
     const res = await fetch(url)
     const data = await res.json()
-    console.log(data)
     SetProducts(data)
   }
 
   const searchHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
-    console.log('qsd')
     e.preventDefault()
     if (searchRef?.current?.value === '') {
       listProducts()
@@ -94,7 +86,7 @@ export default function SearchInput({ SetProducts, setSearchValue }: Props) {
       />
       <button
         type="submit"
-        className="absolute right-2.5 bottom-2.5 rounded-lg bg-green-500 px-3 py-1 text-sm font-medium text-white transition-all duration-300 hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400 dark:bg-green-500 dark:hover:bg-green-500 dark:focus:ring-green-600 sm:px-4 sm:py-2"
+        className="absolute right-2.5 bottom-2.5 rounded-lg bg-green-500 px-3 py-1 text-sm font-medium text-white transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-400 hover:bg-green-600 dark:bg-green-500 dark:focus:ring-green-600 dark:hover:bg-green-500 sm:px-4 sm:py-2"
         // onClick={searchHandler}
       >
         Search

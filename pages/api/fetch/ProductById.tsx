@@ -17,13 +17,11 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const p = req.query
-  console.log(p.SearchValue)
   const res1 = await fetch(
     process.env.NEXT_PUBLIC_BACKEND_API +
       '/api/Products/getProduct/' +
       p.SearchValue
   )
   const data = await res1.json()
-  console.log(data)
   res.json(data)
 }

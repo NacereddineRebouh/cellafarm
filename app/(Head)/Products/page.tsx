@@ -114,9 +114,7 @@ export default function ProductsPage({}: Props) {
         FilterCategories.push(op.value)
       }
     })
-    console.log(FilterCategories.toString())
     const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/Search?'
-    console.log(url)
     const res = await fetch(
       url +
         new URLSearchParams({
@@ -126,16 +124,13 @@ export default function ProductsPage({}: Props) {
     )
 
     const data = await res.json()
-    console.log(data)
     setproducts(data)
   }
   async function getProducts() {
     const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/Products'
-    console.log(url)
     const res = await fetch(url)
     const data = await res.json()
     //set categories to false
-    console.log(data)
     setproducts(data)
   }
 

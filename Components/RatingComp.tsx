@@ -27,7 +27,6 @@ export default function RatingCom({ setRating, rating, disabled }: Props) {
         precision={0.5}
         onChange={(event, newValue) => {
           setRating(newValue)
-          console.log(newValue)
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover)

@@ -25,10 +25,7 @@ export default function TabComponent({ prod }: Props) {
   let pathname = usePathname()
 
   useEffect(() => {
-    // console.log('----------path changed----------')
     require('flowbite/dist/flowbite.js')
-    // typeof window ?  : null
-    // console.log(typeof window)
   }, [path])
 
   return (

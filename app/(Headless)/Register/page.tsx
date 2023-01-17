@@ -17,7 +17,6 @@ export default function Register({}: Props) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setformValues({ ...formValues, [name]: value })
-    console.log(formValues)
   }
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -26,7 +25,6 @@ export default function Register({}: Props) {
     const name = formValues.name
     const email = formValues.email
     const password = formValues.password
-    console.log('Submiting..', {})
     // const result22 = await resdd.json()
 
     const result = await fetch(
@@ -41,8 +39,6 @@ export default function Register({}: Props) {
       }
     )
     const result2 = await result.json()
-    console.log(JSON.stringify(result2))
-    console.log(result2.success)
     if (result2.success) {
       router.push('/Login')
     }

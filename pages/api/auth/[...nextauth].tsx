@@ -30,8 +30,6 @@ export const authOptions = {
         try {
           // @ts-ignore
           const { email, password } = credentials
-          console.log(email, password)
-          console.log(process.env.NEXT_PUBLIC_BACKEND_API + '/api/login')
           const result = await fetch(
             process.env.NEXT_PUBLIC_BACKEND_API + '/api/login',
             {
@@ -45,13 +43,12 @@ export const authOptions = {
           )
           let user = { id: '1', name: 'J Smith', email: 'jsmith@example.com' }
           const result2 = await result.json()
-          console.log(result2)
           if (result2.error) {
             console.log('error')
           }
           // Add logic here to look up the user from the credentials supplied
           if (result2.success) {
-            console.log(result2.success)
+            console.log('Success')
             user.id = String(result2.success.id)
             user.name = result2.success.name
             user.email = result2.success.email
@@ -77,21 +74,6 @@ export const authOptions = {
     signIn: '/Login',
     error: '/Login',
   },
-  // callbacks: {
-  //   // @ts-ignore
-  //   // async signIn({ account, profile }) {
-  //   //   if (account.provider === "facebook") {
-  //   //     // we can do DB queries here
-  //   //     console.log({
-  //   //       verified: profile.password,
-  //   //       name: profile.name,
-  //   //       email: profile.email,
-  //   //       lastName: account.password,
-  //   //     });
-  //   //     return true;
-  //   //   }
-  //   // },
-  // },
 }
 
 // @ts-ignore

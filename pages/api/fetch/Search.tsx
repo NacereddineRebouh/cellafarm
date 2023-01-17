@@ -52,8 +52,6 @@ export default async function handler(
         process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/search/' + s + '/'
     }
   }
-  console.log(p.SearchValue, ':::', p.category)
-  console.log(link)
   const res1 = await fetch(link)
   const data = await res1.json()
 

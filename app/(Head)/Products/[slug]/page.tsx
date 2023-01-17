@@ -39,7 +39,6 @@ interface PostPageProps {
 }
 async function getProducts() {
   const url = process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/list'
-  console.log(url)
   const res = await fetch(url)
   return res.json()
 }
@@ -52,13 +51,6 @@ export async function generateStaticParams() {
 
 async function getProductById(Id: number | string) {
   const url = process.env.NEXT_PUBLIC_App_URL + '/api/fetch/ProductById?'
-  // console.log(
-  //   '----------------------' +
-  //     url +
-  //     new URLSearchParams({
-  //       SearchValue: Id + '',
-  //     })
-  // )
   const res = await fetch(
     url +
       new URLSearchParams({
@@ -66,11 +58,6 @@ async function getProductById(Id: number | string) {
       }),
     { cache: 'force-cache', next: { revalidate: 10 } }
   )
-  // const url =
-  //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
-  // const res = await fetch(
-  //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/Products/getProduct/' + Id
-  // )
   const data = await res.json()
   return data
 }
@@ -78,17 +65,13 @@ async function getProductById(Id: number | string) {
 export default async function page({ params }: PostPageProps) {
   const { slug } = params
   const prod: Data = await getProductById(slug)
-  console.log('------------Generer---------')
-
   if (prod === null) {
     notFound()
   }
-  // const product: Data = await prod?.message
   return (
     <div className="mx-auto h-screen max-h-[1600px] max-w-[2500px] select-none pt-20">
       <div className="flex h-full flex-row flex-wrap">
         {/* cover */}
-        {/* {product?.id + ''} */}
         <div className="relative w-full flex-initial bg-transparent lg:h-full lg:w-[60%]">
           <Image
             src={prod?.product_image}
