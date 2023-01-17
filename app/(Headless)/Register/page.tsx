@@ -9,6 +9,7 @@ type Props = {}
 export default function Register({}: Props) {
   const initialValues = { name: '', email: '', password: '' }
   const [formValues, setformValues] = useState(initialValues)
+  const [message, setmessage] = useState('')
 
   // -----Redirect-----
   const router = useRouter()
@@ -41,6 +42,8 @@ export default function Register({}: Props) {
     const result2 = await result.json()
     if (result2.success) {
       router.push('/Login')
+    } else if (result2.message) {
+      setmessage(result2.message)
     }
   }
 
@@ -85,7 +88,10 @@ export default function Register({}: Props) {
             Enter your credentials to get access account
           </div>
 
-          <div className="mt-10">
+          <div className="">
+            <div className="my-2 h-8 text-sm font-medium text-red-500">
+              {message}
+            </div>
             <form onSubmit={handleSubmit}>
               <div className="mb-5 flex flex-col">
                 <label
