@@ -27,53 +27,52 @@ export default function Register({}: Props) {
     const password = formValues.password
     // const result22 = await resdd.json()
     console.log(name, ' ', email, ' ', password, ' ')
-    // const result = await fetch(
-    //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
-    //   {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //       name,
-    //       email,
-    //       password,
-    //     }),
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'Access-Control-Allow-Origin': '*',
-    //       'Access-Control-Allow-Methods': 'GET,POST',
-    //     },
-    //   }
-    // )
-    // const result2 = await result.json()
-    // if (result2.success) {
-    //   router.push('/Login')
-    // } else if (result2.message) {
-    //   setmessage(result2.message)
-    // }
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/api/register', {
-      method: 'POST',
-      body: JSON.stringify({
-        ...formValues,
-      }),
-      headers: {
-        Accept: 'application/json',
-        //       'Access-Control-Allow-Origin': '*',
-        //       'Access-Control-Allow-Methods': 'GET,POST',
-      },
-    })
-      .then(async (response) => {
-        const result2 = await response.json()
-        console.log(JSON.stringify(result2))
-        console.log(result2.success)
-        if (result2.success) {
-          setmessage(result2.success)
-          router.push('/Login')
-        } else {
-          setmessage(result2.message)
-        }
-      })
-      .catch((reason) => {
-        console.log(reason)
-      })
+    const result = await fetch(
+      process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          ...formValues,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      }
+    )
+    const result2 = await result.json()
+    console.log(result2)
+    if (result2.success) {
+      router.push('/Login')
+    } else if (result2.message) {
+      setmessage(result2.message)
+    }
+
+    // fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/api/register', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     ...formValues,
+    //   }),
+    //   headers: {
+    //     Accept: 'application/json',
+    //     //       'Access-Control-Allow-Origin': '*',
+    //     //       'Access-Control-Allow-Methods': 'GET,POST',
+    //   },
+    // })
+    //   .then(async (response) => {
+    //     const result2 = await response.json()
+    //     console.log(JSON.stringify(result2))
+    //     console.log(result2.success)
+    //     if (result2.success) {
+    //       setmessage(result2.success)
+    //       router.push('/Login')
+    //     } else {
+    //       setmessage(result2.message)
+    //     }
+    //   })
+    //   .catch((reason) => {
+    //     console.log(reason)
+    //   })
   }
 
   const classN =
