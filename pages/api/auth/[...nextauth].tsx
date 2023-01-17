@@ -30,6 +30,7 @@ export const authOptions = {
         try {
           // @ts-ignore
           const { email, password } = credentials
+          console.log('credentials:', email, password)
           const result = await fetch(
             process.env.NEXT_PUBLIC_BACKEND_API + '/api/login',
             {
