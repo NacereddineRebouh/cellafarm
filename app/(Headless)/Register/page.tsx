@@ -19,53 +19,37 @@ export default function Register({}: Props) {
     const { name, value } = e.target
     setformValues({ ...formValues, [name]: value })
   }
-
-  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+  // @ts-ignore
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/api/register', {
-      method: 'POST',
-      body: JSON.stringify({
-        ...formValues,
-      }),
-    })
-      .then(async (response) => {
-        const result2 = await response.json()
-        console.log(JSON.stringify(result2))
-        console.log(result2.success)
-        if (result2.success) {
-          setmessage(result2.success)
-          router.push('/Login')
-        } else {
-          setmessage(result2.message)
-        }
-      })
-      .catch((reason) => {
-        console.log(reason)
-      })
-
-    // const result = await fetch(
-    //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
-    //   {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //       name,
-    //       email,
-    //       password,
-    //       password_confirmation,
-    //     }),
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //     },
-    //   }
-    // )
-    // const result2 = await result.json()
-    // if (result2.success) {
-    //   router.push('/Login')
-    // } else if (result2.message) {
-    //   setmessage(result2.message)
-    // }
+    const name = formValues.name
+    const email = formValues.email
+    const password = formValues.password
+    // const result22 = await resdd.json()
+    console.log(name, ' ', email, ' ', password, ' ')
+    const result = await fetch(
+      process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,POST',
+        },
+      }
+    )
+    const result2 = await result.json()
+    if (result2.success) {
+      router.push('/Login')
+    } else if (result2.message) {
+      setmessage(result2.message)
+    }
   }
 
   const classN =
@@ -111,7 +95,7 @@ export default function Register({}: Props) {
             <div className="my-2 h-8 text-sm font-medium text-red-500">
               {message}
             </div>
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="mb-5 flex flex-col">
                 <label
                   htmlFor="email"
@@ -252,7 +236,8 @@ export default function Register({}: Props) {
 
               <div className="flex w-full">
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={handleSubmit}
                   className="
                   mt-2
                   flex
