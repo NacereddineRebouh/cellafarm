@@ -60,7 +60,7 @@ export default function LoginPage({}: Props) {
     let callB = useSearchparams.get('callbackUrl') ?? null
     const status = await signIn('cred', {
       callbackUrl: callB ?? '/',
-      redirect: false,
+      redirect: true,
       ...payload,
     })
     console.log(status)
