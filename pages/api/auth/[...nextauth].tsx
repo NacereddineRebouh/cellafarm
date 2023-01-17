@@ -43,6 +43,8 @@ export const authOptions = {
           )
           let user = { id: '1', name: 'J Smith', email: 'jsmith@example.com' }
           const result2 = await result.json()
+          console.log('res :: ')
+          console.log(result2)
           if (result2.error) {
             console.log('error')
           }
