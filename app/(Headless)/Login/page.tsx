@@ -33,16 +33,20 @@ export default function LoginPage({}: Props) {
 
   const handleGoogleLogin = async () => {
     const callbackUrl = useSearchparams.get('callbackUrl') ?? null
-    signIn('google', { callbackUrl: callbackUrl ?? 'http://localhost:3000/' })
+    signIn('google', {
+      callbackUrl: callbackUrl ?? process.env.NEXT_PUBLIC_App_URL,
+    })
   }
   const handleGithubLogin = async () => {
     const callbackUrl = useSearchparams.get('callbackUrl') ?? null
-    signIn('github', { callbackUrl: callbackUrl ?? 'http://localhost:3000/' })
+    signIn('github', {
+      callbackUrl: callbackUrl ?? process.env.NEXT_PUBLIC_App_URL,
+    })
   }
   const handleFacebookLogin = async () => {
     const callbackUrl = useSearchparams.get('callbackUrl') ?? null
     signIn('facebook', {
-      callbackUrl: callbackUrl ?? 'http://localhost:3000/',
+      callbackUrl: callbackUrl ?? process.env.NEXT_PUBLIC_App_URL,
     })
   }
 
@@ -51,12 +55,15 @@ export default function LoginPage({}: Props) {
     e.preventDefault()
     const email = name
     const payload = { email, password }
+    console.log('going in ')
+    console.log(payload)
     let callB = useSearchparams.get('callbackUrl') ?? null
     const status = await signIn('cred', {
       callbackUrl: callB ?? '/',
       redirect: false,
       ...payload,
     })
+    console.log(status)
   }
 
   return (
