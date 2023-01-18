@@ -28,7 +28,7 @@ export default function Register({}: Props) {
     // const result22 = await resdd.json()
     console.log(name, ' ', email, ' ', password, ' ')
     const result = await fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API + '/api/register2',
+      process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
       {
         method: 'POST',
         body: JSON.stringify({
@@ -37,6 +37,7 @@ export default function Register({}: Props) {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
+          origin: 'https://cellafarm.vercel.app',
         },
       }
     )
