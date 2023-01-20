@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { headers } from 'next/headers'
+import axios from 'axios'
 
 type Props = {}
 
@@ -27,26 +28,44 @@ export default function Register({}: Props) {
     const password = formValues.password
     // const result22 = await resdd.json()
     console.log(name, ' ', email, ' ', password, ' ')
-    const result = await fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          ...formValues,
-        }),
+    let formData = new FormData() //formdata object
+    formData.append('name', name) //append the values with key, value pair
+    formData.append('email', email)
+    formData.append('password', password)
+    try {
+      // const result = await fetch(
+      //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
+      //   {
+      //     method: 'POST',
+      //     body: formData,
+      //     headers: {
+      //       'Content-Type': 'multipart/form-data',
+      //       // "Content-Type": "application/x-www-form-urlencoded",
+      //       accept: 'application/json',
+      //     },
+      //   }
+      // )
+      const url = process.env.NEXT_PUBLIC_BACKEND_API + '/api/register'
+      const response = await axios.post(url, formData, {
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          origin: 'https://cellafarm.vercel.app',
+          'Content-Type': 'multipart/form-data',
+          // "Content-Type": "application/x-www-form-urlencoded",
+          accept: 'application/json',
         },
+      })
+      const result2 = response.data
+      if (result2.success) {
+        router.push('/Login')
+      } else if (result2.message) {
+        setmessage(result2.message)
       }
-    )
-    const result2 = await result.json()
-    console.log(result2)
-    if (result2.success) {
-      router.push('/Login')
-    } else if (result2.message) {
-      setmessage(result2.message)
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        console.log(error.response.data)
+        setmessage(error.response.data.message)
+      } else {
+        console.error(error)
+      }
     }
 
     // fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/api/register', {
