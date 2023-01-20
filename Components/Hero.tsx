@@ -45,15 +45,15 @@ export default function Hero({}: Props) {
           height={90}
         ></Image>
         {/* members */}
-        <div className="relative mt-10 grid max-w-[550px] cursor-pointer grid-rows-[1fr_1fr] items-center justify-center self-center  overflow-visible sm:ml-11 lg:self-start xl:mt-28 xl:grid-cols-[minmax(190px,_2fr)_3fr]">
+        <div className="relative mt-10 grid max-w-[550px] cursor-pointer grid-rows-[1fr_1fr] items-center justify-center self-center overflow-visible sm:ml-11 lg:self-start xl:mt-28 xl:grid-cols-[minmax(190px,_2fr)_3fr]">
           <Link
-            className="relative cursor-pointer self-center transition-all duration-[4000ms] hover:scale-110"
+            className="relative w-full cursor-pointer self-center transition-all duration-[4000ms] hover:scale-110"
             href={'https://discord.com'}
             target="_blank"
           >
             <Image
               // src={image1.src}
-              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567779/1-min_s16kqj.jpg"
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1674248026/cella/profilepics/2_eyd1pr.jpg"
               alt={''}
               className="aspect-square absolute left-0 -top-10 h-20 w-20 rounded-full border-4 border-white object-cover"
               height={180}
@@ -61,7 +61,7 @@ export default function Hero({}: Props) {
             ></Image>
 
             <Image
-              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567782/2-min_obqxcy.jpg"
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1674248026/cella/profilepics/4_wcu7nl.jpg"
               alt={''}
               className="aspect-square absolute left-14 -top-10 h-20 w-20 rounded-full border-4 border-white object-cover"
               height={180}
@@ -69,7 +69,7 @@ export default function Hero({}: Props) {
             ></Image>
 
             <Image
-              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567745/3-min_tvnqzt.jpg"
+              src="https://res.cloudinary.com/dttrs30gt/image/upload/v1674248024/cella/profilepics/3_syp4xs.jpg"
               alt={''}
               className="aspect-square absolute left-28 -top-10 h-20 w-20 rounded-full border-4 border-white object-cover"
               height={180}

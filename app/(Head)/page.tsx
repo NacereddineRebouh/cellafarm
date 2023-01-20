@@ -36,10 +36,10 @@ export default async function HomePage({}: Props) {
         <div className="absolute top-20 z-0 h-[400px] w-[400px] animate-pulseLong overflow-hidden rounded-full bg-orange-200/95 blur-md drop-shadow-small " />
         <Hero />
         <div className="relative z-10 my-32 flex flex-col items-center justify-center gap-6 text-center sm:gap-11">
-          <h1 className="text-[63px] font-bold">
+          <h1 className="px-4 text-5xl font-bold sm:px-0 sm:text-[63px]">
             Trusted by over <span className="underline ">20,000</span> Partners
           </h1>
-          <div className="relative flex w-auto flex-row flex-wrap justify-center gap-1 sm:h-11 sm:gap-2">
+          <div className="relative flex w-auto flex-row flex-wrap justify-center gap-x-8 gap-y-1 sm:h-11 sm:gap-x-2">
             {/* icons */}
             <Image
               src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670577752/logos/airbnb_rvbnbh.png"
