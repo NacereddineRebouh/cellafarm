@@ -23,7 +23,7 @@ export default async function RootLayout({
   const session = await unstable_getServerSession()
   return (
     <html lang="en" className={montserrat.className}>
-      <Head key="main">
+      <head key="main">
         <title key="title">Cella</title>
         <meta
           name="viewport"
@@ -41,7 +41,7 @@ export default async function RootLayout({
           property="og:image"
           content="https://www.google.com/url?sa=i&url=http%3A%2F%2Ft2.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcTotCbOIUt9xNehNqt4yAd8x19i3mo0Of_xccsc6V2KBh7j2W7B&psig=AOvVaw09vXLag5U9YTM8g6h1I8hM&ust=1673983305380000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCID16_PnzPwCFQAAAAAdAAAAABAD"
         />
-      </Head>
+      </head>
       <body className="relative h-screen self-center overflow-y-scroll scroll-smooth bg-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/40 scrollbar-thumb-green-400">
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
 
