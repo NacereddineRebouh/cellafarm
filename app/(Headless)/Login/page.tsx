@@ -14,7 +14,7 @@ export default function LoginPage({}: Props) {
   const [name, setname] = useState('')
   const [password, setPassword] = useState('')
   const [section, setSection] = useState(
-    'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none'
+    'form-control block w-full px-4 py-2 md:text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-xl transition ease-in-out m-0 focus:text-gray-700 focus:ring-green-600 focus:bg-white focus:border-green-600 focus:outline-none'
   )
   // const router = useRouter();
   const pathname = usePathname() ?? '/'
@@ -25,7 +25,7 @@ export default function LoginPage({}: Props) {
     if (useSearchparams.get('error') != null) {
       // alert('wrong Creds')
       setSection(
-        'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none'
+        'form-control block w-full px-4 py-2 md:text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-300 rounded-xl transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none'
       )
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -68,6 +68,7 @@ export default function LoginPage({}: Props) {
 
   return (
     <section className="h-screen">
+      <title key="title">Login</title>
       <div className="h-full px-6 text-gray-800">
         <div className="relative flex h-full flex-col items-center justify-center gap-y-3 md:flex-wrap md:gap-y-6 lg:justify-center xl:justify-center">
           <div className="aspect-square shrink-1 relative h-64 w-64 grow-0 basis-auto sm:h-1/3 sm:w-6/12 lg:h-full lg:w-6/12">
@@ -78,16 +79,18 @@ export default function LoginPage({}: Props) {
               fill
             ></Image>
           </div>
-          <div className="md:w-8/12 lg:w-5/12 xl:ml-20 xl:w-5/12">
+          <div className="w-full sm:px-10 md:w-8/12 md:px-20 lg:w-5/12 lg:px-0 xl:ml-20 xl:w-5/12">
             <form>
               <div className="flex flex-row items-center justify-center lg:justify-start">
-                <p className="mb-0 mr-4 text-lg font-medium">Sign in with</p>
+                <p className="mb-0 mr-4 text-lg font-medium text-gray-600">
+                  Sign in with
+                </p>
                 <button
                   onClick={handleFacebookLogin}
                   type="button"
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
-                  className="mx-1 inline-block rounded-full p-2 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 enabled:bg-green-600 enabled:focus:bg-green-700 disabled:bg-gray-400 hover:shadow-lg enabled:hover:bg-green-700 active:shadow-lg enabled:active:bg-green-800"
+                  className="mx-1 inline-block rounded-full p-2 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 enabled:bg-green-500 enabled:focus:bg-green-700 disabled:bg-gray-400 hover:shadow-lg enabled:hover:bg-green-700 active:shadow-lg enabled:active:bg-green-800"
                 >
                   {/* <!-- Facebook --> */}
                   <svg
@@ -108,7 +111,7 @@ export default function LoginPage({}: Props) {
                   onClick={handleGithubLogin}
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
-                  className="mx-1 inline-block rounded-full p-2 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 enabled:bg-green-600 enabled:focus:bg-green-700 disabled:bg-gray-400 hover:shadow-lg enabled:hover:bg-green-700 active:shadow-lg enabled:active:bg-green-800"
+                  className="mx-1 inline-block rounded-full p-2 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 enabled:bg-green-500 enabled:focus:bg-green-700 disabled:bg-gray-400 hover:shadow-lg enabled:hover:bg-green-700 active:shadow-lg enabled:active:bg-green-800"
                 >
                   {/* <!-- Twitter --> */}
                   <BsGithub className="h-5 w-5 text-white">
@@ -125,7 +128,7 @@ export default function LoginPage({}: Props) {
                   onClick={handleGoogleLogin}
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
-                  className="mx-1 inline-block rounded-full p-2 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 enabled:bg-green-600 enabled:focus:bg-green-700 disabled:bg-gray-400 hover:shadow-lg enabled:hover:bg-green-700 active:shadow-lg enabled:active:bg-green-800"
+                  className="mx-1 inline-block rounded-full p-2 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out focus:shadow-lg focus:outline-none focus:ring-0 enabled:bg-green-500 enabled:focus:bg-green-700 disabled:bg-gray-400 hover:shadow-lg enabled:hover:bg-green-700 active:shadow-lg enabled:active:bg-green-800"
                 >
                   {/* <!-- Linkedin --> */}
                   <AiOutlineGoogle className="h-5 w-5 text-white">
@@ -139,7 +142,9 @@ export default function LoginPage({}: Props) {
               </div>
 
               <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
-                <p className="mx-4 mb-0 text-center font-semibold">Or</p>
+                <p className="mx-4 mb-0 text-center font-medium text-gray-500">
+                  Or
+                </p>
               </div>
 
               {/* <!-- Email input --> */}
@@ -170,17 +175,17 @@ export default function LoginPage({}: Props) {
                 <div className="form-group form-check">
                   <input
                     type="checkbox"
-                    className="form-check-input float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-600 checked:bg-green-600 focus:outline-green-600"
+                    className="form-check-input float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-600 checked:bg-green-500 focus:outline-green-600"
                     id="exampleCheck2"
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-sm text-gray-800 sm:text-base"
                     htmlFor="exampleCheck2"
                   >
                     Remember me
                   </label>
                 </div>
-                <a href="#!" className="text-gray-800">
+                <a href="#!" className="text-sm text-gray-800 sm:text-base">
                   Forgot password?
                 </a>
               </div>
@@ -189,17 +194,17 @@ export default function LoginPage({}: Props) {
                 <button
                   type="button"
                   onClick={handleCredLogin}
-                  className="inline-block rounded bg-green-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-white shadow-md transition duration-150 ease-in-out focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 hover:bg-green-700 hover:shadow-lg active:bg-green-800 active:shadow-lg"
+                  className="inline-block rounded bg-green-500 px-7 py-3 text-sm font-medium uppercase leading-snug text-white shadow-md transition duration-150 ease-in-out focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 hover:bg-green-700 hover:shadow-lg active:bg-green-800 active:shadow-lg"
                 >
                   Login
                 </button>
-                <p className="mt-2 mb-0 pt-1 text-sm font-semibold">
+                <p className="mt-2 mb-0 pt-1 text-sm font-medium text-gray-500">
                   Don&apos;t have an account?
                   <a
                     href="/Register"
-                    className="text-red-600 transition duration-200 ease-in-out focus:text-red-700 hover:text-red-700"
+                    className="text-green-500 transition duration-200 ease-in-out hover:text-green-600"
                   >
-                    Register
+                    &nbsp;Register
                   </a>
                 </p>
               </div>

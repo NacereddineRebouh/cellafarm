@@ -226,7 +226,7 @@ export default function ProductCard2({ product }: Props) {
             </div>
           </div>
         </div>
-        <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 group-focus/for:visible group-focus/for:from-green-500  group-focus/for:opacity-100 ">
+        <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 group-focus/for:visible group-focus/for:from-green-500 group-focus/for:opacity-100 ">
           Loading...
         </div>
       </div>
