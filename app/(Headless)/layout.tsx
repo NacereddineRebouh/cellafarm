@@ -3,6 +3,7 @@ import SessionProvider from '../../Components/providers/SessionProvider'
 import { Montserrat } from '@next/font/google'
 import logo from '../../public/otg/icon.png'
 import image from '../../public/otg/otg_image.png'
+import { AnalyticsWrapper } from '../../Components/analytics'
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head>
       <body className="relative mx-auto h-screen max-w-[1900px] overflow-hidden">
         <SessionProvider>{children}</SessionProvider>
+        <AnalyticsWrapper />
       </body>
     </html>
   )

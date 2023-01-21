@@ -5,6 +5,7 @@ import Header_Logged from '../../Components/Header_Logged'
 import { unstable_getServerSession } from 'next-auth/next'
 import { Inter, Space_Grotesk, Montserrat } from '@next/font/google'
 import Head from 'next/head'
+import { AnalyticsWrapper } from '../../Components/analytics'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const Space = Space_Grotesk({
   subsets: ['latin'],
@@ -50,6 +51,7 @@ export default async function RootLayout({
           {/* <Header /> */}
         </header>
         <SessionProvider>{children}</SessionProvider>
+        <AnalyticsWrapper />
       </body>
     </html>
   )

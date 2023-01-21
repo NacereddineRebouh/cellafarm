@@ -95,6 +95,7 @@ export default function Hero({}: Props) {
           src="https://res.cloudinary.com/dttrs30gt/image/upload/v1670567369/cover-min_ciliam.jpg"
           // src={Cover1}
           alt={''}
+          priority
           className="rounded-t-full rounded-bl-full rounded-br-[1000px] object-cover drop-shadow-2xl "
           fill
           sizes="(max-width: 1024px) 0vw,
