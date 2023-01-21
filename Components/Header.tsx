@@ -51,7 +51,11 @@ export default function Header({}: Props) {
               Home
             </div>
           </Link> */}
-                  <Link className="hidden md:flex" href="/Products">
+                  <Link
+                    className="hidden md:flex"
+                    prefetch={false}
+                    href="/Products"
+                  >
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Products
                     </div>
