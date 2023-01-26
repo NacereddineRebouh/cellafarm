@@ -102,9 +102,9 @@ export default function Register({}: Props) {
     'absolute rounded-xl h-[550px] w-[550px] bg-emerald-200 blur-sm top-[650px] left-[87%] -z-10  animate-pulseLong '
   return (
     <div className="">
-      <Head key={'main6'}>
+      <head key={'main6'}>
         <title key="Register">Register</title>
-      </Head>
+      </head>
       <div className={classN} />
       <div className="absolute top-[60%] left-[87%] min-h-[200px] min-w-[100px] ">
         <div className="relative top-0 -z-10 h-[400px] w-[400px] animate-spin-slow rounded-3xl bg-green-300/80 blur-sm " />

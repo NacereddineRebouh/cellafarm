@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 import React from 'react'
 import Hero from '../../Components/Hero'
 import Image from 'next/image'
@@ -15,7 +16,7 @@ export default async function HomePage({}: Props) {
   const session = await unstable_getServerSession()
   return (
     <div className="relative bg-[#FAFAFA]">
-      <Head key="main3">
+      <head key="main3">
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://cellafarm.vercel.app/" />
         <meta property="og:type" content="website" />
@@ -44,7 +45,7 @@ export default async function HomePage({}: Props) {
           name="twitter:image"
           content="https://cellafarm.vercel.app/og/og_image.png"
         />
-      </Head>
+      </head>
       {/* <div className="absolute top-[650px] left-[87%] z-0 min-h-[50px] w-[300px] overflow-hidden">
        
       </div> */}

@@ -69,9 +69,9 @@ export default function LoginPage({}: Props) {
 
   return (
     <section className="h-screen">
-      <Head key={'main4'}>
+      <head key={'main4'}>
         <title key="Login">Login</title>
-      </Head>
+      </head>
       <div className="h-full px-6 text-gray-800">
         <div className="relative flex h-full flex-col items-center justify-center gap-y-3 md:flex-wrap md:gap-y-6 lg:justify-center xl:justify-center">
           <div className="aspect-square shrink-1 relative h-64 w-64 grow-0 basis-auto sm:h-1/3 sm:w-6/12 lg:h-full lg:w-6/12">

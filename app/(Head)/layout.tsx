@@ -24,7 +24,7 @@ export default async function RootLayout({
   const session = await unstable_getServerSession()
   return (
     <html lang="en" className={montserrat.className}>
-      <Head key="main">
+      <head key="main">
         {/* <!-- HTML Meta Tags --> */}
         {/* <meta
           name="description"
@@ -37,7 +37,7 @@ export default async function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1"
         />
-      </Head>
+      </head>
       <body className="relative h-screen self-center overflow-y-scroll scroll-smooth bg-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/40 scrollbar-thumb-green-400">
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
 

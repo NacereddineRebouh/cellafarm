@@ -140,9 +140,9 @@ export default function ProductsPage({}: Props) {
   }, [])
   return (
     <div className="mx-auto mt-20 h-screen max-w-[2200px] overflow-visible">
-      <Head key={'main1'}>
+      <head key={'main1'}>
         <title key="title">Our products</title>
-      </Head>
+      </head>
       <div className="grid grid-cols-1 gap-x-3 px-4 py-2 md:grid-cols-[300px_minmax(0px,1fr)] md:px-7 md:pl-0 lg:pl-[120px]">
         {/* filters */}
         <div className="sticky top-[84px] col-start-1 hidden h-[900px] w-[300px] divide-y justify-self-end rounded-r-xl border-[1px] border-gray-300 bg-white  md:flex md:flex-col lg:w-[420px]">
