@@ -28,7 +28,33 @@ export default async function RootLayout({
       <head key="main">
         {/* <!-- HTML Meta Tags --> */}
         <title key="title">CellaFarm</title>
+        <meta property="og:url" content="https://cellafarm.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Cellafarm" />
+        <meta
+          property="og:description"
+          content="Cellafarm: We believe Future of Food is Here"
+        />
+        <meta
+          property="og:image"
+          content="https://cellafarm.vercel.app/og/og_image.png"
+        />
 
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="cellafarm.vercel.app" />
+        <meta property="twitter:url" content="https://cellafarm.vercel.app/" />
+        <meta name="twitter:title" content="Cellafarm" />
+        <meta
+          name="twitter:description"
+          content="Cellafarm: We believe Future of Food is Here"
+        />
+        <link rel="icon" href="/og/icon.png" />
+
+        <meta
+          name="twitter:image"
+          content="https://cellafarm.vercel.app/og/og_image.png"
+        />
         <meta
           name="description"
           content="Cellafarm: We believe Future of Food is Here"
