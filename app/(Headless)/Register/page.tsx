@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 'use client'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 'use client'
 import React, { useEffect } from 'react'
 import ProductCard2 from '../../../Components/ProductCard2'

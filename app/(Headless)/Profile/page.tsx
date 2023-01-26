@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 import { unstable_getServerSession } from 'next-auth/next'
 import Head from 'next/head'
 import React from 'react'

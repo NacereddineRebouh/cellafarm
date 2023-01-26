@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 import Header from '../../Components/Header'
 import '../../styles/globals.css'
 import SessionProvider from '../../Components/providers/SessionProvider'
@@ -26,10 +27,12 @@ export default async function RootLayout({
     <html lang="en" className={montserrat.className}>
       <head key="main">
         {/* <!-- HTML Meta Tags --> */}
-        {/* <meta
+        <title key="title">CellaFarm</title>
+
+        <meta
           name="description"
           content="Cellafarm: We believe Future of Food is Here"
-        /> */}
+        />
 
         {/* custom */}
         <link rel="icon" href="/og/icon.png" />

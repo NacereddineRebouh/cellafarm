@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 'use client'
 import React, { useEffect, useState } from 'react'
 import { signIn } from 'next-auth/react'

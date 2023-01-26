@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 import '../../styles/globals.css'
 import SessionProvider from '../../Components/providers/SessionProvider'
 import { Montserrat } from '@next/font/google'
@@ -23,7 +24,10 @@ export default async function RootLayout({
       {/* <head /> */}
       <head key="main10">
         <link rel="icon" href="/og/icon.png" />
-
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
+        />
         <meta property="og:url" content="https://cellafarm.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og/og_image.png" />
