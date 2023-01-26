@@ -53,7 +53,7 @@ export default function Header({}: Props) {
           </Link> */}
                   <Link
                     className="hidden md:flex"
-                    prefetch={false}
+                    prefetch={true}
                     href="/Products"
                   >
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">

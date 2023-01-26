@@ -50,7 +50,7 @@ export default async function RootLayout({
           {session ? <Header_Logged session={session} /> : <Header />}
           {/* <Header /> */}
         </header>
-        <SessionProvider>{children}</SessionProvider>
+        <SessionProvider session={session}>{children}</SessionProvider>
         <AnalyticsWrapper />
       </body>
     </html>
