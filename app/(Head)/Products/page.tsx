@@ -140,7 +140,7 @@ export default function ProductsPage({}: Props) {
   }, [])
   return (
     <div className="mx-auto mt-20 h-screen max-w-[2200px] overflow-visible">
-      <Head>
+      <Head key={'main1'}>
         <title key="title">Our products</title>
       </Head>
       <div className="grid grid-cols-1 gap-x-3 px-4 py-2 md:grid-cols-[300px_minmax(0px,1fr)] md:px-7 md:pl-0 lg:pl-[120px]">

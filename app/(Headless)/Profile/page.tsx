@@ -9,7 +9,7 @@ export default async function profile({}: Props) {
 
   return (
     <div className="relative flex h-screen w-full flex-col items-center justify-center grayscale">
-      <Head>
+      <Head key={'main5'}>
         <title key="Profile">Profile</title>
       </Head>
 

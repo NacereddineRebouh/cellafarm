@@ -69,7 +69,7 @@ export default function LoginPage({}: Props) {
 
   return (
     <section className="h-screen">
-      <Head>
+      <Head key={'main4'}>
         <title key="Login">Login</title>
       </Head>
       <div className="h-full px-6 text-gray-800">

@@ -15,7 +15,7 @@ export default async function HomePage({}: Props) {
   const session = await unstable_getServerSession()
   return (
     <div className="relative bg-[#FAFAFA]">
-      <Head>
+      <Head key="main3">
         <title key="title">Cellafarm</title>
       </Head>
       {/* <div className="absolute top-[650px] left-[87%] z-0 min-h-[50px] w-[300px] overflow-hidden">
