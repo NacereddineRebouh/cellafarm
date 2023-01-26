@@ -70,8 +70,7 @@ export default function LoginPage({}: Props) {
   return (
     <section className="h-screen">
       <Head>
-        <title key="title">Login</title>
-        <link rel="icon" href="/og/icon.png" />
+        <title key="Login">Login</title>
       </Head>
       <div className="h-full px-6 text-gray-800">
         <div className="relative flex h-full flex-col items-center justify-center gap-y-3 md:flex-wrap md:gap-y-6 lg:justify-center xl:justify-center">

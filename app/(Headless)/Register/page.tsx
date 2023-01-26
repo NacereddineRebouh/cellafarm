@@ -103,8 +103,7 @@ export default function Register({}: Props) {
   return (
     <div className="">
       <Head>
-        <title key="title">Register</title>
-        <link rel="icon" href="/og/icon.png" />
+        <title key="Register">Register</title>
       </Head>
       <div className={classN} />
       <div className="absolute top-[60%] left-[87%] min-h-[200px] min-w-[100px] ">

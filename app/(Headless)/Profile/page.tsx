@@ -10,8 +10,7 @@ export default async function profile({}: Props) {
   return (
     <div className="relative flex h-screen w-full flex-col items-center justify-center grayscale">
       <Head>
-        <title key="title">Profile</title>
-        <link rel="icon" href="/og/icon.png" />
+        <title key="Profile">Profile</title>
       </Head>
 
       <div className="animate-pulse truncate text-center text-sm font-semibold italic tracking-widest text-stone-900 md:text-xl">

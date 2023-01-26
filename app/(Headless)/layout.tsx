@@ -24,7 +24,6 @@ export default async function RootLayout({
       <Head key="main">
         <Head key="main">
           {/* <!-- HTML Meta Tags --> */}
-          <title>Cellafarm</title>
           <meta
             name="description"
             content="Cellafarm: We believe Future of Food is Here"
