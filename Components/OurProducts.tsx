@@ -28,7 +28,7 @@ export default function OurProducts({}: Props) {
   ]
   return (
     <div className="relative grid w-screen max-w-[1350px] grid-rows-[1fr_3fr] gap-8">
-      <div className="row-start-1 mx-8 flex flex-col items-center justify-center gap-6 justify-self-center">
+      <div className="row-start-1 mx-2 flex flex-col items-center justify-center gap-6 justify-self-center sm:mx-8">
         <span className="truncate text-center text-[30px] font-bold md:text-[50px] lg:text-[55px] ">
           Our Featured Products
         </span>
