@@ -16,7 +16,6 @@ export default async function HomePage({}: Props) {
   return (
     <div className="relative bg-[#FAFAFA]">
       <Head key="main3">
-        <title key="title">Cellafarm</title>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://cellafarm.vercel.app/" />
         <meta property="og:type" content="website" />
@@ -39,6 +38,8 @@ export default async function HomePage({}: Props) {
           name="twitter:description"
           content="Cellafarm: We believe Future of Food is Here"
         />
+        <link rel="icon" href="/og/icon.png" />
+
         <meta
           name="twitter:image"
           content="https://cellafarm.vercel.app/og/og_image.png"
