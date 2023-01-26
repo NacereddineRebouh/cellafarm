@@ -24,22 +24,49 @@ export default async function RootLayout({
   const session = await unstable_getServerSession()
   return (
     <html lang="en" className={montserrat.className}>
-      <head key="main">
+      <Head key="main">
+        {/* <!-- HTML Meta Tags --> */}
+        <title>Cellafarm</title>
+        <meta
+          name="description"
+          content="Cellafarm: We believe Future of Food is Here"
+        />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://cellafarm.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Cellafarm" />
+        <meta
+          property="og:description"
+          content="Cellafarm: We believe Future of Food is Here"
+        />
+        <meta
+          property="og:image"
+          content="https://cellafarm.vercel.app/og/og_image.png"
+        />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="cellafarm.vercel.app" />
+        <meta property="twitter:url" content="https://cellafarm.vercel.app/" />
+        <meta name="twitter:title" content="Cellafarm" />
+        <meta
+          name="twitter:description"
+          content="Cellafarm: We believe Future of Food is Here"
+        />
+        <meta
+          name="twitter:image"
+          content="https://cellafarm.vercel.app/og/og_image.png"
+        />
+
+        {/* custom */}
         <title key="title">Cella</title>
         <link rel="icon" href="/og/icon.png" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1"
         />
-        <meta property="og:title" content="Cellafarm" />
-        <meta
-          property="og:description"
-          content="Cellafarm: we believe Future of Food is Here"
-        />
-        <meta property="og:url" content="https://cellafarm.vercel.app" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/og/og_image.png" />
-      </head>
+      </Head>
       <body className="relative h-screen self-center overflow-y-scroll scroll-smooth bg-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/40 scrollbar-thumb-green-400">
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
 
