@@ -26,7 +26,6 @@ export default async function RootLayout({
     <html lang="en" className={montserrat.className}>
       <Head key="main">
         {/* <!-- HTML Meta Tags --> */}
-        <title key="title">Cellafarm</title>
         <meta
           name="description"
           content="Cellafarm: We believe Future of Food is Here"

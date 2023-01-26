@@ -7,6 +7,7 @@ import JoinUs from '../../Components/JoinUs'
 import ContactUs from '../../Components/ContactUs'
 
 import { unstable_getServerSession } from 'next-auth/next'
+import Head from 'next/head'
 
 type Props = {}
 
@@ -14,6 +15,9 @@ export default async function HomePage({}: Props) {
   const session = await unstable_getServerSession()
   return (
     <div className="relative bg-[#FAFAFA]">
+      <Head>
+        <title key="title">Cellafarm</title>
+      </Head>
       {/* <div className="absolute top-[650px] left-[87%] z-0 min-h-[50px] w-[300px] overflow-hidden">
        
       </div> */}
