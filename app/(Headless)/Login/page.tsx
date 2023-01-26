@@ -8,8 +8,6 @@ import { BsGithub } from 'react-icons/bs'
 import { AiOutlineGoogle } from 'react-icons/ai'
 import Head from 'next/head'
 
-// import "../../public/mobile-login-styles.css";
-// import svg from "../../../public/mobile-login-animate.svg";
 type Props = {}
 
 export default function LoginPage({}: Props) {
