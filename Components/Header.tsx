@@ -45,12 +45,17 @@ export default function Header({}: Props) {
                 >
                   CELLA
                 </Link>
-                <div className="mr-0 flex flex-row items-center justify-end gap-9 overflow-visible font-medium lg:gap-12">
+                <div className="mr-0 flex flex-row items-center justify-end gap-8 overflow-visible font-medium lg:gap-12">
                   {/* <Link className="hidden lg:flex" href="/">
             <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
               Home
             </div>
           </Link> */}
+                  <Link className="hidden md:flex" prefetch={true} href="/">
+                    <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
+                      Home
+                    </div>
+                  </Link>
                   <Link
                     className="hidden md:flex"
                     prefetch={true}
