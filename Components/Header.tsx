@@ -85,6 +85,11 @@ export default function Header({}: Props) {
               </div>
               <Disclosure.Panel className="md:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
+                  <Link className="" href="/">
+                    <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
+                      Home
+                    </div>
+                  </Link>
                   <Link className="" href="/Products">
                     <div className="rounded-full px-4 py-3 transition-all duration-300 hover:bg-green-100">
                       Products
