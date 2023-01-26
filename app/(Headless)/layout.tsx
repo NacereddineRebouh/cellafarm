@@ -22,7 +22,7 @@ export default async function RootLayout({
     <html lang="en" className={montserrat.className}>
       {/* <head /> */}
 
-      <Head key="main">
+      <Head key="main2">
         {/* <!-- HTML Meta Tags --> */}
         <meta
           name="description"
