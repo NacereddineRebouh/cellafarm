@@ -205,10 +205,10 @@ export default function ProductCard2({ product }: Props) {
                 >
                   More Details
                 </div>
+                <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 peer-focus/click:visible peer-focus/click:from-green-500 peer-focus/click:opacity-100 ">
+                  Loading...
+                </div>
               </Link>
-              <div className="absolute top-0 left-0 z-10 hidden h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 peer-focus/click:flex peer-focus/click:from-green-500 peer-focus/click:opacity-100 ">
-                Loading...
-              </div>
             </div>
           </div>
         </div>
