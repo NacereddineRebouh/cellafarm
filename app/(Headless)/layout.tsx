@@ -24,7 +24,7 @@ export default async function RootLayout({
       {/* <head /> */}
       <body className="relative mx-auto h-screen max-w-[1900px] overflow-hidden">
         <SessionProvider session={session}>{children}</SessionProvider>
-        {/* <AnalytsicsWrapper /> */}
+        <AnalyticsWrapper />
       </body>
     </html>
   )

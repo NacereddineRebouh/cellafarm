@@ -24,7 +24,7 @@ export default function ProductCard2({ product }: Props) {
       ? product.number_of_purchases
       : `${(product.number_of_purchases / 1000).toFixed()}k in this year`
   return (
-    <Link href={`/Products/${product.id}`} className="relative">
+    <div className="relative">
       <link
         rel="stylesheet"
         href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"
@@ -185,7 +185,8 @@ export default function ProductCard2({ product }: Props) {
               </button>
 
               {/* <!-- Preview Link Button --> */}
-              <button
+              <Link
+                href={`/Products/${product.id}`}
                 className="peer/click group my-auto flex rounded-lg border 
                         border-green-500 px-3 py-2 
                         text-xs
@@ -204,7 +205,7 @@ export default function ProductCard2({ product }: Props) {
                 >
                   More Details
                 </div>
-              </button>
+              </Link>
               <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 peer-focus/click:visible peer-focus/click:from-green-500 peer-focus/click:opacity-100 ">
                 Loading...
               </div>
@@ -212,6 +213,6 @@ export default function ProductCard2({ product }: Props) {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
