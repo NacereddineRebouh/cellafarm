@@ -6,10 +6,15 @@ export default function Head() {
       <DefaultTags />
       {/* <!-- HTML Meta Tags --> */}
       <title key="title">CellaFarm</title>
-      <meta property="og:url" content="https://cellafarm.vercel.app/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Cellafarm" />
       <meta
+        name="url"
+        property="og:url"
+        content="https://cellafarm.vercel.app/"
+      />
+      <meta name="type" property="og:type" content="website" />
+      <meta name="title" property="og:title" content="Cellafarm" />
+      <meta
+        name="description"
         property="og:description"
         content="Cellafarm: We believe Future of Food is Here"
       />
