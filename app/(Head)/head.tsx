@@ -16,7 +16,7 @@ export default function Head() {
       <meta
         name="description"
         property="og:description"
-        content="Cellafarm: We believe Future of Food is Here"
+        content="Cellafarm: we believe that the future of food is here and we are at the forefront of this revolution. We are dedicated to providing our customers with the most delicious, healthy, and sustainable food options using cutting-edge technology and innovative methods."
       ></meta>
       <meta
         name="image"
@@ -31,7 +31,7 @@ export default function Head() {
       <meta name="twitter:title" content="Cellafarm" />
       <meta
         name="twitter:description"
-        content="Cellafarm: We believe Future of Food is Here"
+        content="Cellafarm: we believe that the future of food is here and we are at the forefront of this revolution. We are dedicated to providing our customers with the most delicious, healthy, and sustainable food options using cutting-edge technology and innovative methods."
       />
       <meta
         name="twitter:image"
@@ -41,7 +41,7 @@ export default function Head() {
 
       <meta
         name="description"
-        content="Cellafarm: We believe Future of Food is Here"
+        content="Cellafarm: we believe that the future of food is here and we are at the forefront of this revolution. We are dedicated to providing our customers with the most delicious, healthy, and sustainable food options using cutting-edge technology and innovative methods."
       />
     </>
   )
