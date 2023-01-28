@@ -14,8 +14,8 @@ type Props = {}
 export default async function HomePage({}: Props) {
   const session = await unstable_getServerSession()
   return (
-    <div className="relative bg-[#FAFAFA]">
-      <section id="Hero" className="relative mx-auto mt-20 max-w-[2500px]">
+    <section id="Hero" className="relative bg-[#FAFAFA]">
+      <div className="relative mx-auto mt-20 max-w-[2500px]">
         <div className="absolute top-[650px] left-[87%] z-0 hidden h-[400px] w-[400px] animate-pulseC rounded-full bg-emerald-200/80 blur-sm drop-shadow-small2 md:flex" />
         <div className="absolute top-20 z-0 h-[400px] w-[400px] animate-pulseLong overflow-hidden rounded-full bg-orange-200/95 blur-md drop-shadow-small " />
         <Hero />
@@ -76,7 +76,7 @@ export default async function HomePage({}: Props) {
             />
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Our Story */}
       <section id="ourStory" className="mx-auto bg-white">
@@ -103,6 +103,6 @@ export default async function HomePage({}: Props) {
       <footer id="ContactUs" className="mx-auto flex justify-center">
         <ContactUs />
       </footer>
-    </div>
+    </section>
   )
 }

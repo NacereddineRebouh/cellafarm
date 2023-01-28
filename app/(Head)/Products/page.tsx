@@ -437,12 +437,12 @@ export default function ProductsPage({}: Props) {
           {products?.length > 0 ? (
             <div className="grid grid-cols-1 gap-y-4 gap-x-2 overflow-visible lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {products?.map((product: Data) => (
-                <Suspense
-                  key={product.id}
-                  fallback={<ProductCard2_placeholder />}
-                >
-                  <ProductCard2 key={product.id} product={product} />
-                </Suspense>
+                // <Suspense
+                //   key={product.id}
+                //   fallback={<ProductCard2_placeholder />}
+                // >
+                <ProductCard2 key={product.id} product={product} />
+                // </Suspense>
               ))}
             </div>
           ) : (
