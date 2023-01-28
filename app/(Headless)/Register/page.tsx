@@ -60,14 +60,14 @@ export default function Register({}: Props) {
   }
 
   const classN =
-    'absolute rounded-full h-[550px] w-[550px] bg-emerald-200 blur-sm -top-[10%] -left-28 -z-10  animate-pulseLong '
+    'absolute rounded-full h-[320px] w-[320px] md:h-[550px] md:w-[550px] bg-emerald-200 blur-sm -top-[10%] -left-28 -z-10 animate-pulseLong '
   const classN2 =
-    'absolute rounded-xl h-[550px] w-[550px] bg-emerald-200 blur-sm top-[650px] left-[87%] -z-10  animate-pulseLong '
+    'absolute rounded-xl h-[320px] w-[320px] md:h-[550px] md:w-[550px] bg-emerald-200 blur-sm top-[650px] left-[87%] -z-10 animate-pulseLong '
   return (
     <div className="">
       <div className={classN} />
       <div className="absolute top-[60%] left-[87%] min-h-[200px] min-w-[100px] ">
-        <div className="relative top-0 -z-10 aspect-1 h-[150px] w-[150px] animate-spin-slow rounded-3xl bg-green-300/80 blur-sm md:aspect-none md:h-[400px] md:w-[400px] " />
+        <div className="relative top-0 -z-10 aspect-1 h-[250px] w-[250px] animate-spin-slow rounded-3xl bg-green-300/80 blur-sm md:aspect-none md:h-[400px] md:w-[400px] " />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-center">
         <link
