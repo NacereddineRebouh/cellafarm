@@ -187,7 +187,7 @@ export default function ProductCard2({ product }: Props) {
               {/* <!-- Preview Link Button --> */}
               <Link
                 href={`/Products/${product.id}`}
-                className="peer/click group my-auto flex rounded-lg border 
+                className="group/click group my-auto flex rounded-lg border 
                         border-green-500 px-3 py-2 
                         text-xs
                         transition-all duration-200 focus:bg-green-500 hover:bg-green-500"
@@ -205,7 +205,7 @@ export default function ProductCard2({ product }: Props) {
                 >
                   More Details
                 </div>
-                <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 peer-focus/click:visible peer-focus/click:from-green-500 peer-focus/click:opacity-100 ">
+                <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 group-focus/click:visible group-focus/click:from-green-500 group-focus/click:opacity-100 ">
                   Loading...
                 </div>
               </Link>
