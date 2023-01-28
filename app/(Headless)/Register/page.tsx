@@ -35,18 +35,6 @@ export default function Register({}: Props) {
     formData.append('email', email)
     formData.append('password', password)
     try {
-      // const result = await fetch(
-      //   process.env.NEXT_PUBLIC_BACKEND_API + '/api/register',
-      //   {
-      //     method: 'POST',
-      //     body: formData,
-      //     headers: {
-      //       'Content-Type': 'multipart/form-data',
-      //       // "Content-Type": "application/x-www-form-urlencoded",
-      //       accept: 'application/json',
-      //     },
-      //   }
-      // )
       const url = process.env.NEXT_PUBLIC_BACKEND_API + '/api/register'
       const response = await axios.post(url, formData, {
         headers: {
@@ -69,32 +57,6 @@ export default function Register({}: Props) {
         console.error(error)
       }
     }
-
-    // fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/api/register', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     ...formValues,
-    //   }),
-    //   headers: {
-    //     Accept: 'application/json',
-    //     //       'Access-Control-Allow-Origin': '*',
-    //     //       'Access-Control-Allow-Methods': 'GET,POST',
-    //   },
-    // })
-    //   .then(async (response) => {
-    //     const result2 = await response.json()
-    //     console.log(JSON.stringify(result2))
-    //     console.log(result2.success)
-    //     if (result2.success) {
-    //       setmessage(result2.success)
-    //       router.push('/Login')
-    //     } else {
-    //       setmessage(result2.message)
-    //     }
-    //   })
-    //   .catch((reason) => {
-    //     console.log(reason)
-    //   })
   }
 
   const classN =
@@ -103,12 +65,9 @@ export default function Register({}: Props) {
     'absolute rounded-xl h-[550px] w-[550px] bg-emerald-200 blur-sm top-[650px] left-[87%] -z-10  animate-pulseLong '
   return (
     <div className="">
-      <head key={'main6'}>
-        <title key="Register">Register</title>
-      </head>
       <div className={classN} />
       <div className="absolute top-[60%] left-[87%] min-h-[200px] min-w-[100px] ">
-        <div className="relative top-0 -z-10 h-[400px] w-[400px] animate-spin-slow rounded-3xl bg-green-300/80 blur-sm " />
+        <div className="relative top-0 -z-10 aspect-1 w-1/4 animate-spin-slow rounded-3xl bg-green-300/80 blur-sm md:aspect-none md:h-[400px] md:w-[400px] " />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-center">
         <link

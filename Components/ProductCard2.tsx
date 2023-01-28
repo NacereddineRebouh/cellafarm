@@ -122,10 +122,16 @@ export default function ProductCard2({ product }: Props) {
           <div className="mt-1 truncate text-xs text-gray-400">
             by
             {/* <!-- Author --> */}
-            <a className="font-semibold hover:underline"> EgoistDeveloper </a>
+            <Link href={'#'} className="font-semibold hover:underline">
+              {' '}
+              EgoistDeveloper{' '}
+            </Link>
             {product.By}
             {/* <!-- Category --> */}
-            <a className="font-semibold hover:underline"> e-commerce </a>
+            <Link href={'#'} className="font-semibold hover:underline">
+              {' '}
+              e-commerce{' '}
+            </Link>
           </div>
 
           {/* <!-- Price --> */}
@@ -189,7 +195,7 @@ export default function ProductCard2({ product }: Props) {
             {/* <!-- Button Column --> */}
             <div className="flex flex-auto flex-row justify-end">
               {/* <!-- Cart Button --> */}
-              <a
+              <button
                 className="group my-auto mr-2 flex rounded-lg border border-green-500
                         px-3 py-2 text-xs 
                         transition-all
@@ -200,10 +206,10 @@ export default function ProductCard2({ product }: Props) {
                   className="mdi mdi-cart-outline text-green-700
                             delay-100 group-hover:text-white"
                 ></i>
-              </a>
+              </button>
 
               {/* <!-- Preview Link Button --> */}
-              <a
+              <button
                 className="group my-auto flex rounded-lg border border-green-500 
                         px-3 py-2 text-xs 
                         transition-all
@@ -222,7 +228,7 @@ export default function ProductCard2({ product }: Props) {
                 >
                   More Details
                 </div>
-              </a>
+              </button>
             </div>
           </div>
         </div>

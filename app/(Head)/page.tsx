@@ -16,7 +16,6 @@ export default async function HomePage({}: Props) {
   const session = await unstable_getServerSession()
   return (
     <div className="relative bg-[#FAFAFA]">
-      <head key="main3">{/* <!-- Facebook Meta Tags --> */}</head>
       {/* <div className="absolute top-[650px] left-[87%] z-0 min-h-[50px] w-[300px] overflow-hidden">
        
       </div> */}

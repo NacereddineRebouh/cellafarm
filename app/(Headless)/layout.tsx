@@ -22,19 +22,9 @@ export default async function RootLayout({
   return (
     <html lang="en" className={montserrat.className}>
       {/* <head /> */}
-      <head key="main10">
-        <link rel="icon" href="/og/icon.png" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
-        />
-        <meta property="og:url" content="https://cellafarm.vercel.app" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/og/og_image.png" />
-      </head>
       <body className="relative mx-auto h-screen max-w-[1900px] overflow-hidden">
         <SessionProvider session={session}>{children}</SessionProvider>
-        <AnalyticsWrapper />
+        {/* <AnalytsicsWrapper /> */}
       </body>
     </html>
   )
