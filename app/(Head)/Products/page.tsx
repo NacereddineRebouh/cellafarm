@@ -11,7 +11,6 @@ import PriceSlider from '../../../Components/PriceSlider'
 import RatingCom from '../../../Components/RatingComp'
 import cover from '../../../public/Images/cover2.jpg'
 import SearchInput from '../../../Components/SearchInput'
-import Head from 'next/head'
 
 type Props = {}
 interface Data {

@@ -16,17 +16,9 @@ interface Data {
   created_at: Date
   updated_at: Date
 }
-// interface Data {
-//   id: number;
-//   name: string;
-//   href: string;
-//   price: number;
-//   imageSrc: string;
-//   imageAlt: string;
-// }
+
 export default function ProductCard2({ product }: Props) {
   const imgsrc = product.product_image
-  //const imgsrc =process.env.NEXT_PUBLIC_BACKEND_API + '/' + product.product_image
   const title =
     product.number_of_purchases / 1000 < 1
       ? product.number_of_purchases
@@ -47,12 +39,6 @@ export default function ProductCard2({ product }: Props) {
         {/* <!-- Preview --> */}
         <div className="min-h-48 group aspect-h-1 aspect-w-1 relative my-auto inline overflow-hidden">
           {/* <!-- Thumbnail --> */}
-          {/* <Image
-            className="absolute rounded-t object-cover h-full w-full transition-all duration-300 hover:scale-110"
-            src="https://images.unsplash.com/photo-1627384113858-ce93ff568d1f?auto=format&fit=crop&w=1170&q=80"
-            alt="Product Preview"
-            fill
-          /> */}
           <Image
             src={imgsrc}
             // src={product.imageSrc}
@@ -77,11 +63,6 @@ export default function ProductCard2({ product }: Props) {
                         w-9 rounded-full bg-gray-50/10 px-1 transition-colors
                         duration-200 hover:bg-gray-50/20"
               >
-                {/* <i
-                  className="mdi mdi-playlist-plus text-xl text-gray-200
-                            transition-all duration-200 hover:text-white"
-                  title="Add to Bookmarks"
-                /> */}
                 <BookmarkAddRoundedIcon
                   className="text-2xl
                   text-gray-200
@@ -96,11 +77,6 @@ export default function ProductCard2({ product }: Props) {
                         w-9 rounded-full bg-gray-50/10 px-1 text-center
                         transition-colors duration-200  hover:bg-gray-50/20 "
               >
-                {/* <i
-                  className="mdi mdi-heart p-1 text-xl text-gray-200
-                            transition-all duration-200 hover:text-white"
-                  title="Add to Favorites"
-                ></i> */}
                 <FavoriteRoundedIcon
                   className="text-2xl text-gray-200
                 transition-all duration-200 hover:text-white"
@@ -210,33 +186,32 @@ export default function ProductCard2({ product }: Props) {
 
               {/* <!-- Preview Link Button --> */}
               <button
-                className="group my-auto flex rounded-lg border border-green-500 
-                        px-3 py-2 text-xs 
-                        transition-all
-                        duration-200 hover:bg-green-500"
+                className="peer/click group my-auto flex rounded-lg border 
+                        border-green-500 px-3 py-2 
+                        text-xs
+                        transition-all duration-200 focus:bg-green-500 hover:bg-green-500"
               >
                 {/* <!-- Icon --> */}
                 <i
                   className="mdi mdi-eye-outline text-green-700
-                            delay-100 group-hover:text-white"
+                            delay-100 group-hover:text-white group-focus:text-white"
                 ></i>
 
                 {/* <!-- Text --> */}
                 <div
                   className="ml-2 text-xs font-semibold text-green-700
-                            delay-100 group-hover:text-white"
+                            delay-100 group-hover:text-white group-focus:text-white"
                 >
                   More Details
                 </div>
               </button>
+              <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 peer-focus/click:visible peer-focus/click:from-green-500 peer-focus/click:opacity-100 ">
+                Loading...
+              </div>
             </div>
           </div>
-        </div>
-        <div className="collapse absolute top-0 left-0 z-0 flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-b font-medium tracking-widest text-neutral-200 opacity-0 transition-all duration-500 group-focus/for:visible group-focus/for:from-green-500 group-focus/for:opacity-100 ">
-          Loading...
         </div>
       </div>
     </Link>
   )
 }
-// bg-gradient-to-r from-cyan-500 to-blue-500

@@ -8,7 +8,6 @@ import JoinUs from '../../Components/JoinUs'
 import ContactUs from '../../Components/ContactUs'
 
 import { unstable_getServerSession } from 'next-auth/next'
-import Head from 'next/head'
 
 type Props = {}
 

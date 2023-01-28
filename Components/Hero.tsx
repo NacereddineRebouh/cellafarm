@@ -1,16 +1,8 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-// import image1 from '../public/Images/1.jpg'
-// import image2 from '../public/Images/2.jpg'
-// import image3 from '../public/Images/3.jpg'
-import Cover1 from '../public/Images/cover.jpg'
-// import Cover2 from '../public/Images/cover2.jpg'
 import Star from '../public/Images/star.svg'
-// import Star2 from '../public/Images/four-star.png'
-import sticker from '../public/Images/1.png'
 import star from '../public/Images/four-star.png'
-import logo from '../public/Images/logo_small.png'
 import Link from 'next/link'
 
 type Props = {}
