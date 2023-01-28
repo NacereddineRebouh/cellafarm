@@ -13,10 +13,7 @@ export default function Head() {
         property="og:description"
         content="Cellafarm: We believe Future of Food is Here"
       />
-      <meta
-        property="og:image"
-        content="https://cellafarm.vercel.app/og/og_image.png"
-      />
+      <meta property="og:image" content="/og/og_image.png" />
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -27,10 +24,7 @@ export default function Head() {
         name="twitter:description"
         content="Cellafarm: We believe Future of Food is Here"
       />
-      <meta
-        name="twitter:image"
-        content="https://cellafarm.vercel.app/og/og_image.png"
-      />
+      <meta name="twitter:image" content="/og/og_image.png" />
       {/* -------twitter end------- */}
 
       <meta

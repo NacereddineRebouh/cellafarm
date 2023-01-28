@@ -15,23 +15,6 @@ export default async function HomePage({}: Props) {
   const session = await unstable_getServerSession()
   return (
     <div className="relative bg-[#FAFAFA]">
-      {/* <div className="absolute top-[650px] left-[87%] z-0 min-h-[50px] w-[300px] overflow-hidden">
-       
-      </div> */}
-
-      {/* <section
-        id="header"
-        className="fixed w-screen top-0 max-w-[2200px] z-50 backdrop-blur-[1px]"
-      > */}
-      {/* <Header /> */}
-      {/* Header */}
-      {/* <section
-        id="header"
-        className="fixed w-screen top-0 max-w-[2200px] z-50 backdrop-blur-[1px]"
-      >
-        {session ? <Header_Logged session={session} /> : <Header />}
-      </section> */}
-      {/* Hero */}
       <section id="Hero" className="relative mx-auto mt-20 max-w-[2500px]">
         <div className="absolute top-[650px] left-[87%] z-0 hidden h-[400px] w-[400px] animate-pulseC rounded-full bg-emerald-200/80 blur-sm drop-shadow-small2 md:flex" />
         <div className="absolute top-20 z-0 h-[400px] w-[400px] animate-pulseLong overflow-hidden rounded-full bg-orange-200/95 blur-md drop-shadow-small " />

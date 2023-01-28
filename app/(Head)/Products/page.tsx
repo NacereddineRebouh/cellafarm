@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-head-element */
 'use client'
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import ProductCard2 from '../../../Components/ProductCard2'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
@@ -11,6 +11,7 @@ import PriceSlider from '../../../Components/PriceSlider'
 import RatingCom from '../../../Components/RatingComp'
 import cover from '../../../public/Images/cover2.jpg'
 import SearchInput from '../../../Components/SearchInput'
+import ProductCard2_placeholder from '@/Components/placeholders/ProductCard2_placeholder'
 
 type Props = {}
 interface Data {
@@ -240,29 +241,6 @@ export default function ProductsPage({}: Props) {
                   className="mx-16 w-[110px] cursor-default rounded-2xl border-[1px] border-gray-300 bg-white py-3 text-center placeholder-gray-400 outline-none"
                 ></input>
                 <div className="mx-12 w-full cursor-pointer self-center rounded-2xl bg-green-500 px-5 py-[14px] text-center font-light tracking-widest text-white transition-all duration-300 hover:bg-green-500/90 active:bg-green-600">
-                  {/* <ThemeProvider theme={theme}>
-                    <Button
-                      className="bg-[#47A3581] px-5"
-                      sx={[
-                        {
-                          borderRadius: 10,
-                          boxShadow: 1,
-                          paddingY: 1.7,
-                          paddingX: 1.7,
-                        },
-                        {
-                          "&:hover": {
-                            color: "#47A358",
-                            backgroundColor: "transparent",
-                            boxShadow: 0,
-                          },
-                        },
-                      ]}
-                      variant="contained"
-                    >
-                      Set Price
-                    </Button>
-                  </ThemeProvider> */}
                   <span className="select-none"> Set Price</span>
                 </div>
               </div>
@@ -459,7 +437,12 @@ export default function ProductsPage({}: Props) {
           {products?.length > 0 ? (
             <div className="grid grid-cols-1 gap-y-4 gap-x-2 overflow-visible lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {products?.map((product: Data) => (
-                <ProductCard2 key={product.id} product={product} />
+                <Suspense
+                  key={product.id}
+                  fallback={<ProductCard2_placeholder />}
+                >
+                  <ProductCard2 key={product.id} product={product} />
+                </Suspense>
               ))}
             </div>
           ) : (
