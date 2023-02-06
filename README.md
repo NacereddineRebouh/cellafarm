@@ -33,7 +33,7 @@ Ecommerce landing page
 
 ## Screenshots
 # Shot 1:
-![Alt Text](https://res.cloudinary.com/dttrs30gt/image/upload/v1675666021/cella/cellafarm.vercel.app__1_jqslrd.png)
+![Alt Text](https://res.cloudinary.com/dttrs30gt/image/upload/v1675667094/cella/cellafarm.vercel.app__1_jqslrd_bcfv00.png)
 # Shot 2:
 ![Alt Text](https://res.cloudinary.com/dttrs30gt/image/upload/v1675666056/cella/cellafarm.vercel.app__2_fywdri.png)
 # Shot 3:
